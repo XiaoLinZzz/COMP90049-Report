@@ -1,6 +1,6 @@
-PWD c:\Users\XiaoLinzzz\Downloads\COMP90049 Report\COMP90049-report-template
+PWD c:\Users\XiaoLinzzz\Documents\GitHub\IML\COMP90049 Report\COMP90049-report-template
 INPUT C:\Users\XiaoLinzzz\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\XiaoLinzzz\Downloads\COMP90049 Report\COMP90049-report-template\report-template.tex
+INPUT c:\Users\XiaoLinzzz\Documents\GitHub\IML\COMP90049 Report\COMP90049-report-template\report-template.tex
 OUTPUT report-template.log
 INPUT C:\Users\XiaoLinzzz\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\XiaoLinzzz\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
