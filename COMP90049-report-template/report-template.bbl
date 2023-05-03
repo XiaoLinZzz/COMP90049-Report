@@ -1,0 +1,19 @@
+\begin{thebibliography}{}
+
+\bibitem[Bhola et~al., 2020]{bhola-etal-2020-retrieving}
+Bhola, A., Halder, K., Prasad, A., and Kan, M.-Y. (2020).
+\newblock Retrieving skills from job descriptions: A language model based
+  extreme multi-label classification framework.
+\newblock In {\em Proceedings of the 28th International Conference on
+  Computational Linguistics}, pages 5832--5842, Barcelona, Spain (Online).
+  International Committee on Computational Linguistics.
+
+\bibitem[Reimers and Gurevych, 2019]{reimers-gurevych-2019-sentence}
+Reimers, N. and Gurevych, I. (2019).
+\newblock Sentence-{BERT}: Sentence embeddings using {S}iamese {BERT}-networks.
+\newblock In {\em Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing and the 9th International Joint Conference on
+  Natural Language Processing (EMNLP-IJCNLP)}, pages 3982--3992, Hong Kong,
+  China. Association for Computational Linguistics.
+
+\end{thebibliography}
