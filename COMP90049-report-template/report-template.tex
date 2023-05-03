@@ -22,7 +22,7 @@
 \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-\title{Exploring the Impact of Unlabeled Data on Job Salary Prediction}
+\title{Exploring the impact of machine learning algorithms with unlabelled data}
 \author
 {Anonymous}
 
@@ -39,16 +39,44 @@
 
 \section{Introduction}
 
-This  receive thousands of applications, among which fewer than 10 \% have the appropriate skills. \cite{bhola-etal-2020-retrieving}
+In the current digital age, many recruiters seek to find suitable candidates through multiple channels 
+— e.g., online job portals, professional networks 
+— as well as traditional avenues, such as word of mouth and mass media \cite{Primary-Organizational-Recruitment-Sources}.
 
-The dataset is 
+The dataset is derived from the large dataset called \textit{mycareersfuture} \cite{bhola-etal-2020-retrieving}.
+The dataset has a total of 17377 data, consisting of 13902 train data, 1738 validation data, and 1737 test data. 
+The dataset is shown in the table \ref*{tab:dataset_info}:
 
+
+\begin{table}[h]
+    \centering
+    \caption{Dataset Information}
+    \begin{tabular}{lrrr}
+        \toprule
+        Data Type      & Labeled & Unlabeled & Total \\
+        \midrule
+        Train          & 8000    & 5902      & 13902 \\
+        Validation     & 1738    & -         & 1738  \\
+        Test           & -       & 1737      & 1737  \\
+        \midrule
+        Total          & 9738    & 7639      & 17377 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:dataset_info}
+\end{table}
+
+
+To answer the question "Does Unlabelled data improve Job salary prediction?", 
+We will analyse and compare the performance of different machine learning algorithms for this dataset (labelled and unlabelled data) 
+and finally explore whether unlabelled data can be effectively combined to increase the performance of the model.
 
 
 \section{Literature review}
 
 
 \section{methods}
+
+we will use the architecture shown in figure \ref{fig:Self-trained} to train the model.
 
 \section{Results}
 
@@ -59,28 +87,11 @@ The dataset is
 
 \begin{figure}[ht]
     \centering
-    \begin{tikzpicture}[node distance=1.5 cm]
-        % Nodes
-        \node (input) [io] {Input};
-        \node (fit_labeled) [process, below of=input] {Fit (Labeled)};
-        \node (predict_unlabeled) [process, below of=fit_labeled] {Predict (Unlabeled)};
-        \node (concatenate) [process, below of=predict_unlabeled] {Concatenate};
-        \node (fit_all) [process, below of=concatenate] {Fit (All)};
-        \node (predict_val) [process, below of=fit_all] {Predict (Val)};
-        \node (eval_metrics) [process, below of=predict_val] {Eval Metrics};
-        \node (output) [io, below of=eval_metrics] {Output};
-        
-        % Lines
-        \draw [arrow] (input) -- (fit_labeled);
-        \draw [arrow] (fit_labeled) -- (predict_unlabeled);
-        \draw [arrow] (predict_unlabeled) -- (concatenate);
-        \draw [arrow] (concatenate) -- (fit_all);
-        \draw [arrow] (fit_all) -- (predict_val);
-        \draw [arrow] (predict_val) -- (eval_metrics);
-        \draw [arrow] (eval_metrics) -- (output);
-    \end{tikzpicture}
-    \caption{caption position}
+    \includegraphics[width=0.5\textwidth]{Self-trained-semi-supervised-learning-architecture.png}
+    \caption{Self-trained semi-supervised learning architecture \cite{Self-trained-semi-supervised-learning}}
+    \label{fig:Self-trained}
 \end{figure}
+
 
 
 
