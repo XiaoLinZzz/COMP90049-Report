@@ -38,14 +38,14 @@
 %\end{abstract}
 
 \section{Introduction}
-
+Predicting salary based on job descriptions is a challenging task in the field of natural language processing and machine learning.
 In the current digital age, many recruiters seek to find suitable candidates through multiple channels 
 — e.g., online job portals, professional networks 
 — as well as traditional avenues, such as word of mouth and mass media \cite{Primary-Organizational-Recruitment-Sources}.
 
 The dataset is derived from the large dataset called \textit{mycareersfuture} \cite{bhola-etal-2020-retrieving}.
 The dataset has a total of 17377 data, consisting of 13902 train data, 1738 validation data, and 1737 test data. 
-The dataset is shown in the table \ref*{tab:dataset_info}:
+The dataset is shown in the table \ref{tab:dataset_info}:
 
 
 \begin{table}[h]
@@ -76,18 +76,26 @@ and finally explore whether unlabelled data can be effectively combined to incre
 
 \section{Methods}
 
-In this study, our objective is to predict the salary bin through the given job description.
-We use both TFIDF \cite{manning2008introduction} and word embedding which computed with a pretrained language model, called the Sentence Transformer \cite{reimers-gurevych-2019-sentence} to represent the job description,
-and use these information for model and error analysis.
-We designed our experiment in three parts, focus in supervised learning, unsupervised learning, and semi-supervised learning.
-And we will compare
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Self-trained-semi-supervised-learning-architecture.png}
+    \caption{Self-trained semi-supervised learning architecture \cite{Self-trained-semi-supervised-learning}}
+    \label{fig:Self-trained}
+\end{figure}
+
+In this study, we adopt two feature representations  from the raw job descriptions.
+
+\begin{itemize}
+    \item \textbf{TF-IDF}: We compute the TF-IDF vectors for job descriptions using the method proposed by \cite{manning2008introduction}. This method captures the importance of terms within a document and across the entire corpus.
+    \item \textbf{Embedding}: We employ the pretrained Sentence Transformer model \cite{reimers-gurevych-2019-sentence} to obtain word embeddings for the job descriptions. These embeddings provide semantic representation for the text data.
+\end{itemize}
 
 % In the experiment, we decided to use salary bin as our target labels.
-% To predict the salary bin, we will adapt the classification machine learning algorithms.
+% To predict the salary bin, we will adopt the classification machine learning algorithms.
 % We split our experiment into three parts: supervised learning, unsupervised learning, and semi-supervised learning.
 
 \subsection{Supervised learning}
-In the supervised learning part, we adapt 9 different machine learning algorithms to predict the salary bin.
+In the supervised learning part, we adopt 9 different machine learning algorithms to predict the salary bin.
 
 
 \subsection{Unsupervised learning}
@@ -96,12 +104,7 @@ In the supervised learning part, we adapt 9 different machine learning algorithm
 we will use the architecture shown in figure \ref{fig:Self-trained} to train the model.
 
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Self-trained-semi-supervised-learning-architecture.png}
-    \caption{Self-trained semi-supervised learning architecture \cite{Self-trained-semi-supervised-learning}}
-    \label{fig:Self-trained}
-\end{figure}
+
 
 
 
