@@ -8,6 +8,7 @@
 \usepackage{pgfplots}
 \usepackage{rotating}
 \usepackage{tikz}
+\usepackage{float}
 \usepackage[margin=1in]{geometry}
 \usetikzlibrary{shapes.geometric, arrows}
 \sloppy
@@ -83,22 +84,114 @@ and finally explore whether unlabelled data can be effectively combined to incre
     \label{fig:Self-trained}
 \end{figure}
 
-In this study, we adopt two feature representations  from the raw job descriptions.
+In this study, we adopt two feature representations from the raw job descriptions.
 
 \begin{itemize}
     \item \textbf{TF-IDF}: We compute the TF-IDF vectors for job descriptions using the method proposed by \cite{manning2008introduction}. This method captures the importance of terms within a document and across the entire corpus.
-    \item \textbf{Embedding}: We employ the pretrained Sentence Transformer model \cite{reimers-gurevych-2019-sentence} to obtain word embeddings for the job descriptions. These embeddings provide semantic representation for the text data.
+    \item \textbf{Embedding}: We adopt the pretrained Sentence Transformer model \cite{reimers-gurevych-2019-sentence} to obtain word embeddings for the job descriptions. These embeddings provide semantic representation for the text data.
 \end{itemize}
+
+
+\begin{table*}
+    \begin{center}
+        \captionof{table}{Accuracy Comparison} \label{tab:title} 
+        \begin{tabularx}{\textwidth}{@{}l *{7}{>{\centering\arraybackslash}X} @{}}
+        \toprule
+        Model & \multicolumn{2}{c}{TFIDF} & \multicolumn{2}{c}{Embedding}\\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        & Labaled data & Unlabeled data & Labaled data & Unlabaled data \\
+        \midrule
+        
+        	KNN & 18.77 & 16.29 & 23.95 & 20.96 \\
+        	GNB & 21.99 & 21.12 & 22.91 & 22.33 \\
+        	BNB  & 21.47 & 20.43 & 21.3 & 21.65 \\
+        	Adaboost & 22.39 & 20.43 & 21.7 & 19.8 \\
+        	Decision Tree (DT) & 20.38 & 18.59 & 16.29 & 14.68 \\
+        	Adaboost + DT & 22.22 & 19.86 & 21.7 & 21.42 \\
+        	Adaboost + GNB & 21.99 & 10.99 & 17.67 & 13.82 \\
+        	Adaboost + BNB & 22.51 & 10.99 & 21.53 & 14.91 \\
+        	SVM & \textbf{25.62}$^*$ & \textbf{24.64}$^*$ & \textbf{26.89}$^*$ & \textbf{24.87}$^*$ \\
+        	\cmidrule(lr){1-5} 
+        	K-means & - & \textbf{15.66}$^*$ & - & \textbf{16.41}$^*$ \\
+        	GMM & - & 11.23 & - & 11.51 \\
+        
+        \bottomrule
+        \end{tabularx}
+        % \bigskip \vspace{In the dataset with labels, we use supervised machine learning algorithms. Then for the unlabelled part, we use self-training class supervised learning methods.}
+        % \bigskip Should be a caption
+    \end{center}
+\end{table*}
+
+Through these two features, we explore three different machine learning algorithms paradigms: Supervised learning, Unsupervised learning and Semi-supervised learning.
+
+To find the parameters which can lead the highest performance of the machine learning algorithms, we consider to use some search strategies.
+Due to a high dimentions of the features, we adopt Grid search here because Grid search can suffer from high dimensional spaces \cite{liashchynskyi2019grid}.
+
+We train the models between TFIDF and Embedding features, but we will only choose TFIDF features to analyse the results and evaluate the models.
+To evaluate classifiers, we use the $F_1$ score that combines recall and precision in the following way: \cite{TAN2006290}
+
+\begin{equation}
+    precision = \frac{TP}{TP + FP}
+\end{equation}
+
+\begin{equation}
+    recall = \frac{TP}{TP + FN}
+\end{equation}
+
+\begin{equation}
+    F_1 = 2 \times \frac{precision \times recall}{precision + recall}
+\end{equation}
+
+
+
+
 
 % In the experiment, we decided to use salary bin as our target labels.
 % To predict the salary bin, we will adopt the classification machine learning algorithms.
 % We split our experiment into three parts: supervised learning, unsupervised learning, and semi-supervised learning.
 
+
+
+
 \subsection{Supervised learning}
 In the supervised learning part, we adopt 9 different machine learning algorithms to predict the salary bin.
 
 
+\subsubsection{KNN Classifier}
+We decide to use k-Nearest-Neighbours (kNN) as our baseline model, because the k-Nearest-Neighbours is a simple but effective method for classification \cite{10.1007/978-3-540-39964-3_62}.
+To ensure what weights and p value in KNN classifier lead to a better performance, We set k value in the range of 1 to 11,
+and weight options are uniform and distance,
+p value is 1 and 2 (represent manhattan distance and euclidean distance).
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.5\textwidth]{knn_output.png}
+    \caption{KNN Classifier}
+    \label{fig:knn}
+\end{figure}
+
+Using Grid search, we find that in TF-IDF, using kNN algorithm's best accuracy is 18.77\% with parameters (k = 3, p = 2, weights = "distance").
+In Embedding, using kNN algorithm's best accuracy is 23.95 \% with parameters (k = 3, p = 2, weights = "distance").
+
+
+In the experiment, we found that K is the most important factor in kNN algorithm. 
+So we keep increasing k's value to 200.
+And set p equal to 2 and weight is "distance". 
+The output is shown in figure \ref{fig:knn}.
+
+
+
+\subsubsection{Decision Tree Classifier}
+
+
+\subsubsection{Naive Bayes Classifier}
+
+
+\subsubsection{Other Classifier}
+
+
 \subsection{Unsupervised learning}
+
 
 \subsection{Semi-supervised learning}
 we will use the architecture shown in figure \ref{fig:Self-trained} to train the model.
@@ -202,37 +295,6 @@ we will use the architecture shown in figure \ref{fig:Self-trained} to train the
 \end{figure*}
 
 
-
-
-\begin{table*}
-    \begin{center}
-        \captionof{table}{Accuracy Comparison} \label{tab:title} 
-        \begin{tabularx}{\textwidth}{@{}l *{7}{>{\centering\arraybackslash}X} @{}}
-        \toprule
-        Model & \multicolumn{2}{c}{TFIDF} & \multicolumn{2}{c}{Embedding}\\
-        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-        & Labaled data & Unlabeled data & Labaled data & Unlabaled data \\
-        \midrule
-        
-        	KNN & 18.77 & 16.29 & 23.95 & 20.96 \\
-        	GNB & 21.99 & 21.12 & 22.91 & 22.33 \\
-        	BNB  & 21.47 & 20.43 & 21.3 & 21.65 \\
-        	Adaboost & 22.39 & 20.43 & 21.7 & 19.8 \\
-        	Decision Tree (DT) & 20.38 & 18.59 & 16.29 & 14.68 \\
-        	Adaboost + DT & 22.22 & 19.86 & 21.7 & 21.42 \\
-        	Adaboost + GNB & 21.99 & 10.99 & 17.67 & 13.82 \\
-        	Adaboost + BNB & 22.51 & 10.99 & 21.53 & 14.91 \\
-        	SVM & \textbf{25.62}$^*$ & \textbf{24.64}$^*$ & \textbf{26.89}$^*$ & \textbf{24.87}$^*$ \\
-        	\cmidrule(lr){1-5} 
-        	K-means & - & \textbf{15.66}$^*$ & - & \textbf{16.41}$^*$ \\
-        	GMM & - & 11.23 & - & 11.51 \\
-        
-        \bottomrule
-        \end{tabularx}
-        % \bigskip \vspace{In the dataset with labels, we use supervised machine learning algorithms. Then for the unlabelled part, we use self-training class supervised learning methods.}
-        % \bigskip Should be a caption
-    \end{center}
-\end{table*}
 
 \nocite{*}
 \bibliographystyle{apalike}

@@ -4,45 +4,45 @@ The top-level auxiliary file: report-template.aux
 The style file: apalike.bst
 Database file #1: sample.bib
 Warning--empty booktitle in Self-trained-semi-supervised-learning
-You've used 6 entries,
+You've used 9 entries,
             1935 wiz_defined-function locations,
-            512 strings with 5360 characters,
-and the built_in function-call counts, 2927 in all, are:
-= -- 301
-> -- 103
-< -- 7
-+ -- 34
-- -- 34
-* -- 212
-:= -- 461
-add.period$ -- 21
-call.type$ -- 6
-change.case$ -- 46
-chr.to.int$ -- 6
-cite$ -- 7
-duplicate$ -- 137
-empty$ -- 215
-format.name$ -- 46
-if$ -- 631
+            532 strings with 5953 characters,
+and the built_in function-call counts, 4239 in all, are:
+= -- 430
+> -- 162
+< -- 10
++ -- 55
+- -- 53
+* -- 320
+:= -- 684
+add.period$ -- 30
+call.type$ -- 9
+change.case$ -- 69
+chr.to.int$ -- 9
+cite$ -- 10
+duplicate$ -- 188
+empty$ -- 303
+format.name$ -- 70
+if$ -- 896
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 7
-newline$ -- 32
-num.names$ -- 18
-pop$ -- 58
+missing$ -- 9
+newline$ -- 46
+num.names$ -- 29
+pop$ -- 78
 preamble$ -- 1
-purify$ -- 47
+purify$ -- 70
 quote$ -- 0
-skip$ -- 110
+skip$ -- 151
 stack$ -- 0
-substring$ -- 200
-swap$ -- 43
-text.length$ -- 4
+substring$ -- 291
+swap$ -- 54
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 34
+type$ -- 52
 warning$ -- 1
-while$ -- 22
+while$ -- 33
 width$ -- 0
-write$ -- 82
+write$ -- 120
 (There was 1 warning)

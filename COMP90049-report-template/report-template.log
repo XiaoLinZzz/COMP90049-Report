@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.8)  4 MAY 2023 15:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.8)  4 MAY 2023 19:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -343,6 +343,13 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \rotFPbot=\skip53
 \rot@float@box=\box64
 \rot@mess@toks=\toks35
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count295
+\float@exts=\toks36
+\float@box=\box65
+\@float@everytoks=\toks37
+\@floatcapt=\box66
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -350,9 +357,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count295
-\Gm@cntv=\count296
-\c@Gm@tempcnt=\count297
+\Gm@cnth=\count296
+\Gm@cntv=\count297
+\c@Gm@tempcnt=\count298
 \Gm@bindingoffset=\dimen289
 \Gm@wd@mp=\dimen290
 \Gm@odd@mp=\dimen291
@@ -361,7 +368,7 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutheight=\dimen294
 \Gm@layouthoffset=\dimen295
 \Gm@layoutvoffset=\dimen296
-\Gm@dimlist=\toks36
+\Gm@dimlist=\toks38
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
@@ -373,38 +380,38 @@ File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \arrowsize=\dimen297
 )) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count298
-\l__pdf_internal_box=\box65
+\l__color_backend_stack_int=\count299
+\l__pdf_internal_box=\box67
 ) (./report-template.aux)
 \openout1 = `report-template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
  (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count299
+\scratchcounter=\count300
 \scratchdimen=\dimen298
-\scratchbox=\box66
-\nofMPsegments=\count300
-\nofMParguments=\count301
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count302
+\scratchbox=\box68
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count303
 \MPscratchDim=\dimen299
-\MPnumerator=\count303
-\makeMPintoPDFobject=\count304
-\everyMPtoPDFconversion=\toks38
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks40
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -413,9 +420,10 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 31.
+ on input line 32.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
 *geometry* driver: auto-detecting
@@ -453,53 +461,75 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 32.
+(Font)              <12> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 32.
+(Font)              <8> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 32.
+(Font)              <6> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 54.
+(Font)              <10.95> on input line 55.
 <Self-trained-semi-supervised-learning-architecture.png, id=4, 846.16125pt x 564.1075pt>
 File: Self-trained-semi-supervised-learning-architecture.png Graphic file (type png)
 <use Self-trained-semi-supervised-learning-architecture.png>
-Package pdftex.def Info: Self-trained-semi-supervised-learning-architecture.png  used on input line 81.
+Package pdftex.def Info: Self-trained-semi-supervised-learning-architecture.png  used on input line 82.
 (pdftex.def)             Requested size: 234.8775pt x 156.58041pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 81--82
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 82--83
  [][] 
  []
 
 
-Overfull \hbox (44.43536pt too wide) in paragraph at lines 201--202
- [][] 
+Underfull \hbox (badness 2088) in paragraph at lines 125--126
+[]\OT1/cmr/m/n/10.95 Through these two fea-tures, we ex-plore
+ []
+
+
+Underfull \hbox (badness 1796) in paragraph at lines 125--126
+\OT1/cmr/m/n/10.95 three dif-fer-ent ma-chine learn-ing al-go-rithms
  []
 
 [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
- <./Self-trained-semi-supervised-learning-architecture.png>] (./report-template.bbl
-Underfull \hbox (badness 1694) in paragraph at lines 17--20
+ <./Self-trained-semi-supervised-learning-architecture.png>]
+<knn_output.png, id=16, 947.4597pt x 487.0998pt>
+File: knn_output.png Graphic file (type png)
+<use knn_output.png>
+Package pdftex.def Info: knn_output.png  used on input line 168.
+(pdftex.def)             Requested size: 234.8775pt x 120.74895pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 168--169
+ [][] 
+ []
+
+
+Overfull \hbox (44.43536pt too wide) in paragraph at lines 294--295
+ [][] 
+ []
+
+
+Underfull \vbox (badness 2269) has occurred while \output is active []
+
+ [2 <./knn_output.png>] (./report-template.bbl
+Underfull \hbox (badness 1694) in paragraph at lines 29--32
 []\OT1/cmr/m/n/10.95 Manning, C., Ragha-van, P., and Sch^^?utze,
  []
 
-) [2
-
-] [3] (./report-template.aux) ) 
+) [3] [4] (./report-template.aux) ) 
 Here is how much of TeX's memory you used:
- 25466 strings out of 478268
- 667426 string characters out of 5846348
- 1051930 words of memory out of 5000000
- 43309 multiletter control sequences out of 15000+600000
+ 25541 strings out of 478268
+ 668726 string characters out of 5846348
+ 1058262 words of memory out of 5000000
+ 43379 multiletter control sequences out of 15000+600000
  474818 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,19n,103p,798b,2311s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on report-template.pdf (3 pages, 124025 bytes).
+ 99i,19n,103p,798b,2313s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on report-template.pdf (4 pages, 225028 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

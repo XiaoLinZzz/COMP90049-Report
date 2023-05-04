@@ -71,3 +71,47 @@ title = {Clinical Document Classification Using Labeled and Unlabeled Data Acros
     pages = "3982--3992",
     abstract = "BERT (Devlin et al., 2018) and RoBERTa (Liu et al., 2019) has set a new state-of-the-art performance on sentence-pair regression tasks like semantic textual similarity (STS). However, it requires that both sentences are fed into the network, which causes a massive computational overhead: Finding the most similar pair in a collection of 10,000 sentences requires about 50 million inference computations ({\textasciitilde}65 hours) with BERT. The construction of BERT makes it unsuitable for semantic similarity search as well as for unsupervised tasks like clustering. In this publication, we present Sentence-BERT (SBERT), a modification of the pretrained BERT network that use siamese and triplet network structures to derive semantically meaningful sentence embeddings that can be compared using cosine-similarity. This reduces the effort for finding the most similar pair from 65 hours with BERT / RoBERTa to about 5 seconds with SBERT, while maintaining the accuracy from BERT. We evaluate SBERT and SRoBERTa on common STS tasks and transfer learning tasks, where it outperforms other state-of-the-art sentence embeddings methods.",
 }
+
+@InProceedings{10.1007/978-3-540-39964-3_62,
+author="Guo, Gongde
+and Wang, Hui
+and Bell, David
+and Bi, Yaxin
+and Greer, Kieran",
+editor="Meersman, Robert
+and Tari, Zahir
+and Schmidt, Douglas C.",
+title="KNN Model-Based Approach in Classification",
+booktitle="On The Move to Meaningful Internet Systems 2003: CoopIS, DOA, and ODBASE",
+year="2003",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="986--996",
+abstract="The k-Nearest-Neighbours (kNN) is a simple but effective method for classification. The major drawbacks with respect to kNN are (1) its low efficiency -- being a lazy learning method prohibits it in many applications such as dynamic web mining for a large repository, and (2) its dependency on the selection of a ``good value'' for k. In this paper, we propose a novel kNN type method for classification that is aimed at overcoming these shortcomings. Our method constructs a kNN model for the data, which replaces the data to serve as the basis of classification. The value of k is automatically determined, is varied for different data, and is optimal in terms of classification accuracy. The construction of the model reduces the dependency on k and makes classification faster. Experiments were carried out on some public datasets collected from the UCI machine learning repository in order to test our method. The experimental results show that the kNN based model compares well with C5.0 and kNN in terms of classification accuracy, but is more efficient than the standard kNN.",
+isbn="978-3-540-39964-3"
+}
+
+
+@misc{liashchynskyi2019grid,
+      title={Grid Search, Random Search, Genetic Algorithm: A Big Comparison for NAS}, 
+      author={Petro Liashchynskyi and Pavlo Liashchynskyi},
+      year={2019},
+      eprint={1912.06059},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+
+@article{TAN2006290,
+  title = {An effective refinement strategy for KNN text classifier},
+  journal = {Expert Systems with Applications},
+  volume = {30},
+  number = {2},
+  pages = {290-298},
+  year = {2006},
+  issn = {0957-4174},
+  doi = {https://doi.org/10.1016/j.eswa.2005.07.019},
+  url = {https://www.sciencedirect.com/science/article/pii/S0957417405001570},
+  author = {Songbo Tan},
+  keywords = {KNN, Text classification, Information retrieval, Data mining},
+  abstract = {Due to the exponential growth of documents on the Internet and the emergent need to organize them, the automated categorization of documents into predefined labels has received an ever-increased attention in the recent years. A wide range of supervised learning algorithms has been introduced to deal with text classification. Among all these classifiers, K-Nearest Neighbors (KNN) is a widely used classifier in text categorization community because of its simplicity and efficiency. However, KNN still suffers from inductive biases or model misfits that result from its assumptions, such as the presumption that training data are evenly distributed among all categories. In this paper, we propose a new refinement strategy, which we called as DragPushing, for the KNN Classifier. The experiments on three benchmark evaluation collections show that DragPushing achieved a significant improvement on the performance of the KNN Classifier.}
+}

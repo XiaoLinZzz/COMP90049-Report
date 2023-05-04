@@ -8,10 +8,22 @@ Bhola, A., Halder, K., Prasad, A., and Kan, M.-Y. (2020).
   Computational Linguistics}, pages 5832--5842, Barcelona, Spain (Online).
   International Committee on Computational Linguistics.
 
+\bibitem[Guo et~al., 2003]{10.1007/978-3-540-39964-3_62}
+Guo, G., Wang, H., Bell, D., Bi, Y., and Greer, K. (2003).
+\newblock Knn model-based approach in classification.
+\newblock In Meersman, R., Tari, Z., and Schmidt, D.~C., editors, {\em On The
+  Move to Meaningful Internet Systems 2003: CoopIS, DOA, and ODBASE}, pages
+  986--996, Berlin, Heidelberg. Springer Berlin Heidelberg.
+
 \bibitem[Hassanzadeh et~al., 2018]{Self-trained-semi-supervised-learning}
 Hassanzadeh, H., Kholghi, M., Nguyen, A., and Chu, K. (2018).
 \newblock Clinical document classification using labeled and unlabeled data
   across hospitals.
+
+\bibitem[Liashchynskyi and Liashchynskyi, 2019]{liashchynskyi2019grid}
+Liashchynskyi, P. and Liashchynskyi, P. (2019).
+\newblock Grid search, random search, genetic algorithm: A big comparison for
+  nas.
 
 \bibitem[Manning et~al., 2008]{manning2008introduction}
 Manning, C., Raghavan, P., and Sch{\"u}tze, H. (2008).
@@ -31,6 +43,11 @@ Shenoy, V. and Aithal, S. (2018).
 \newblock Literature review on primary organizational recruitment sources.
 \newblock {\em International Journal of Management, Technology, and Social
   Sciences}, pages 37--58.
+
+\bibitem[Tan, 2006]{TAN2006290}
+Tan, S. (2006).
+\newblock An effective refinement strategy for knn text classifier.
+\newblock {\em Expert Systems with Applications}, 30(2):290--298.
 
 \bibitem[Zhang and Cheng, 1908]{knn-Zhang2019/08}
 Zhang, J. and Cheng, J. (2019/08).
