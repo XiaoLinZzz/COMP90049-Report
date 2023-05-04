@@ -549,6 +549,7 @@ INPUT C:\Users\XiaoLinzzz\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx
 INPUT C:\Users\XiaoLinzzz\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\XiaoLinzzz\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Users\XiaoLinzzz\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\XiaoLinzzz\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT .\Self-trained-semi-supervised-learning-architecture.png
 INPUT .\Self-trained-semi-supervised-learning-architecture.png
 INPUT Self-trained-semi-supervised-learning-architecture.png
@@ -557,7 +558,10 @@ OUTPUT report-template.pdf
 INPUT .\Self-trained-semi-supervised-learning-architecture.png
 INPUT .\Self-trained-semi-supervised-learning-architecture.png
 INPUT .\Self-trained-semi-supervised-learning-architecture.png
-INPUT C:\Users\XiaoLinzzz\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT .\Self-trained-semi-supervised-learning-architecture.png
+INPUT .\Self-trained-semi-supervised-learning-architecture.png
+INPUT Self-trained-semi-supervised-learning-architecture.png
+INPUT .\Self-trained-semi-supervised-learning-architecture.png
 INPUT .\report-template.bbl
 INPUT report-template.bbl
 INPUT .\report-template.bbl
