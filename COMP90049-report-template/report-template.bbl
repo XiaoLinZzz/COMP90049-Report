@@ -13,10 +13,30 @@ Hassanzadeh, H., Kholghi, M., Nguyen, A., and Chu, K. (2018).
 \newblock Clinical document classification using labeled and unlabeled data
   across hospitals.
 
+\bibitem[Manning et~al., 2008]{manning2008introduction}
+Manning, C., Raghavan, P., and Sch{\"u}tze, H. (2008).
+\newblock {\em Introduction to Information Retrieval}.
+\newblock An Introduction to Information Retrieval. Cambridge University Press.
+
+\bibitem[Reimers and Gurevych, 2019]{reimers-gurevych-2019-sentence}
+Reimers, N. and Gurevych, I. (2019).
+\newblock Sentence-{BERT}: Sentence embeddings using {S}iamese {BERT}-networks.
+\newblock In {\em Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing and the 9th International Joint Conference on
+  Natural Language Processing (EMNLP-IJCNLP)}, pages 3982--3992, Hong Kong,
+  China. Association for Computational Linguistics.
+
 \bibitem[Shenoy and Aithal, 2018]{Primary-Organizational-Recruitment-Sources}
 Shenoy, V. and Aithal, S. (2018).
 \newblock Literature review on primary organizational recruitment sources.
 \newblock {\em International Journal of Management, Technology, and Social
   Sciences}, pages 37--58.
+
+\bibitem[Zhang and Cheng, 1908]{knn-Zhang2019/08}
+Zhang, J. and Cheng, J. (2019/08).
+\newblock Study of employment salary forecast using knn algorithm.
+\newblock In {\em Proceedings of the 2019 International Conference on Modeling,
+  Simulation and Big Data Analysis (MSBDA 2019)}, pages 166--170. Atlantis
+  Press.
 
 \end{thebibliography}

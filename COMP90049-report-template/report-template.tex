@@ -74,18 +74,29 @@ and finally explore whether unlabelled data can be effectively combined to incre
 \section{Literature review}
 
 
-\section{methods}
+\section{Methods}
+
+In this study, our objective is to predict the salary bin through the given job description.
+We use both TFIDF \cite{manning2008introduction} and word embedding which computed with a pretrained language model, called the Sentence Transformer \cite{reimers-gurevych-2019-sentence} to represent the job description,
+and use these information for model and error analysis.
+We designed our experiment in three parts, focus in supervised learning, unsupervised learning, and semi-supervised learning.
+And we will compare
+
+% In the experiment, we decided to use salary bin as our target labels.
+% To predict the salary bin, we will adapt the classification machine learning algorithms.
+% We split our experiment into three parts: supervised learning, unsupervised learning, and semi-supervised learning.
+
+\subsection{Supervised learning}
+In the supervised learning part, we adapt 9 different machine learning algorithms to predict the salary bin.
 
 
-\subsection{supervised learning}
+\subsection{Unsupervised learning}
 
-\subsection{unsupervised learning}
-
-\subsection{semi-supervised learning}
+\subsection{Semi-supervised learning}
 we will use the architecture shown in figure \ref{fig:Self-trained} to train the model.
 
 
-\begin{figure}[ht]
+\begin{figure}[t]
     \centering
     \includegraphics[width=0.5\textwidth]{Self-trained-semi-supervised-learning-architecture.png}
     \caption{Self-trained semi-supervised learning architecture \cite{Self-trained-semi-supervised-learning}}
@@ -100,13 +111,6 @@ we will use the architecture shown in figure \ref{fig:Self-trained} to train the
 
 \section{Conclusions}
 
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Self-trained-semi-supervised-learning-architecture.png}
-    \caption{Self-trained semi-supervised learning architecture \cite{Self-trained-semi-supervised-learning}}
-    \label{fig:Self-trained}
-\end{figure}
 
 
 

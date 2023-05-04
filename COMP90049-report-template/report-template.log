@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.3)  4 MAY 2023 10:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.3)  4 MAY 2023 12:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -380,11 +380,7 @@ File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count298
 \l__pdf_internal_box=\box66
-) (report-template.aux
-
-LaTeX Warning: Label `fig:Self-trained' multiply defined.
-
-)
+) (report-template.aux)
 \openout1 = `report-template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
@@ -472,54 +468,48 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <Self-trained-semi-supervised-learning-architecture.png, id=4, 846.16125pt x 564.1075pt>
 File: Self-trained-semi-supervised-learning-architecture.png Graphic file (type png)
 <use Self-trained-semi-supervised-learning-architecture.png>
-Package pdftex.def Info: Self-trained-semi-supervised-learning-architecture.png  used on input line 90.
+Package pdftex.def Info: Self-trained-semi-supervised-learning-architecture.png  used on input line 101.
 (pdftex.def)             Requested size: 234.8775pt x 156.58041pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 90--91
- [][] 
- []
-
-File: Self-trained-semi-supervised-learning-architecture.png Graphic file (type png)
-<use Self-trained-semi-supervised-learning-architecture.png>
-Package pdftex.def Info: Self-trained-semi-supervised-learning-architecture.png  used on input line 106.
-(pdftex.def)             Requested size: 234.8775pt x 156.58041pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 106--107
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 101--102
  [][] 
  []
 
 
-Overfull \hbox (44.43536pt too wide) in paragraph at lines 194--195
+Overfull \hbox (44.43536pt too wide) in paragraph at lines 198--199
  [][] 
  []
 
-(report-template.bbl
-Underfull \vbox (badness 3861) has occurred while \output is active []
-
- [1{C:/Users/XiaoLinzzz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+(report-template.bbl [1{C:/Users/XiaoLinzzz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 
 
  <./Self-trained-semi-supervised-learning-architecture.png>]
-Underfull \vbox (badness 1231) has occurred while \output is active []
+Underfull \hbox (badness 1694) in paragraph at lines 17--20
+[]\OT1/cmr/m/n/10.95 Manning, C., Ragha-van, P., and Sch^^?utze,
+ []
 
-) [2] (report-template.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- ) 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]) [3
+
+] (report-template.aux) ) 
 Here is how much of TeX's memory you used:
- 25547 strings out of 476315
- 674549 string characters out of 5784837
- 1881068 words of memory out of 5000000
- 45632 multiletter control sequences out of 15000+600000
+ 25551 strings out of 476315
+ 674632 string characters out of 5784837
+ 1882068 words of memory out of 5000000
+ 45636 multiletter control sequences out of 15000+600000
  517505 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,19n,103p,817b,2308s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,19n,103p,817b,2310s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report-template.pdf (2 pages, 113370 bytes).
+Output written on report-template.pdf (3 pages, 118719 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 42 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

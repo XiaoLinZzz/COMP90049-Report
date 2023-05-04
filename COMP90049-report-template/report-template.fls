@@ -558,10 +558,6 @@ OUTPUT report-template.pdf
 INPUT .\Self-trained-semi-supervised-learning-architecture.png
 INPUT .\Self-trained-semi-supervised-learning-architecture.png
 INPUT .\Self-trained-semi-supervised-learning-architecture.png
-INPUT .\Self-trained-semi-supervised-learning-architecture.png
-INPUT .\Self-trained-semi-supervised-learning-architecture.png
-INPUT Self-trained-semi-supervised-learning-architecture.png
-INPUT .\Self-trained-semi-supervised-learning-architecture.png
 INPUT .\report-template.bbl
 INPUT report-template.bbl
 INPUT .\report-template.bbl
