@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.3)  5 MAY 2023 22:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.3)  5 MAY 2023 23:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -514,15 +514,15 @@ Overfull \hbox (9.03374pt too wide) in paragraph at lines 147--148
 <Self-trained-semi-supervised-learning-architecture.png, id=17, 846.16125pt x 564.1075pt>
 File: Self-trained-semi-supervised-learning-architecture.png Graphic file (type png)
 <use Self-trained-semi-supervised-learning-architecture.png>
-Package pdftex.def Info: Self-trained-semi-supervised-learning-architecture.png  used on input line 181.
+Package pdftex.def Info: Self-trained-semi-supervised-learning-architecture.png  used on input line 183.
 (pdftex.def)             Requested size: 234.8775pt x 156.58041pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 181--182
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 183--184
  [][] 
  []
 
 
-Overfull \hbox (44.43536pt too wide) in paragraph at lines 279--280
+Overfull \hbox (44.43536pt too wide) in paragraph at lines 281--282
  [][] 
  []
 
@@ -543,13 +543,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Here is how much of TeX's memory you used:
  25636 strings out of 476315
  676180 string characters out of 5784837
- 1884068 words of memory out of 5000000
+ 1883068 words of memory out of 5000000
  45714 multiletter control sequences out of 15000+600000
  517846 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,103p,817b,2314s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\XiaoLinzzz\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report-template.pdf (4 pages, 237450 bytes).
+Output written on report-template.pdf (4 pages, 237972 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
