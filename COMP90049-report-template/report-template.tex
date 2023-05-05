@@ -66,23 +66,27 @@ The dataset is shown in the table \ref{tab:dataset_info}:
     \label{tab:dataset_info}
 \end{table}
 
+The distribution of salary bin is shown in the figure \ref{fig:dataset_output}.
+We observe that the salary bin distribution exhibits an uneven and imbalanced pattern,
+which may potentially affect the performance of the machine learning algorithms.
+
 
 To answer the question "Does Unlabelled data improve Job salary prediction?", 
 We will analyse and compare the performance of different machine learning algorithms for this dataset (labelled and unlabelled data) 
 and finally explore whether unlabelled data can be effectively combined to increase the performance of the model.
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.5\textwidth]{dataset_output.png}
+    \caption{Salary Bin Distribution}
+    \label{fig:dataset_output}
+\end{figure}
 
 \section{Literature review}
 
 
 \section{Methods}
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Self-trained-semi-supervised-learning-architecture.png}
-    \caption{Self-trained semi-supervised learning architecture \cite{Self-trained-semi-supervised-learning}}
-    \label{fig:Self-trained}
-\end{figure}
 
 In this study, we adopt two feature representations from the raw job descriptions.
 
@@ -91,36 +95,6 @@ In this study, we adopt two feature representations from the raw job description
     \item \textbf{Embedding}: We adopt the pretrained Sentence Transformer model \cite{reimers-gurevych-2019-sentence} to obtain word embeddings for the job descriptions. These embeddings provide semantic representation for the text data.
 \end{itemize}
 
-
-\begin{table*}
-    \begin{center}
-        \captionof{table}{Accuracy Comparison} \label{tab:title} 
-        \begin{tabularx}{\textwidth}{@{}l *{7}{>{\centering\arraybackslash}X} @{}}
-        \toprule
-        Model & \multicolumn{2}{c}{TFIDF} & \multicolumn{2}{c}{Embedding}\\
-        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-        & Labaled data & Unlabeled data & Labaled data & Unlabaled data \\
-        \midrule
-        
-        	KNN & 18.77 & 16.29 & 23.95 & 20.96 \\
-        	GNB & 21.99 & 21.12 & 22.91 & 22.33 \\
-        	BNB  & 21.47 & 20.43 & 21.3 & 21.65 \\
-        	Adaboost & 22.39 & 20.43 & 21.7 & 19.8 \\
-        	Decision Tree (DT) & 20.38 & 18.59 & 16.29 & 14.68 \\
-        	Adaboost + DT & 22.22 & 19.86 & 21.7 & 21.42 \\
-        	Adaboost + GNB & 21.99 & 10.99 & 17.67 & 13.82 \\
-        	Adaboost + BNB & 22.51 & 10.99 & 21.53 & 14.91 \\
-        	SVM & \textbf{25.62}$^*$ & \textbf{24.64}$^*$ & \textbf{26.89}$^*$ & \textbf{24.87}$^*$ \\
-        	\cmidrule(lr){1-5} 
-        	K-means & - & \textbf{15.66}$^*$ & - & \textbf{16.41}$^*$ \\
-        	GMM & - & 11.23 & - & 11.51 \\
-        
-        \bottomrule
-        \end{tabularx}
-        % \bigskip \vspace{In the dataset with labels, we use supervised machine learning algorithms. Then for the unlabelled part, we use self-training class supervised learning methods.}
-        % \bigskip Should be a caption
-    \end{center}
-\end{table*}
 
 Through these two features, we explore three different machine learning algorithms paradigms: Supervised learning, Unsupervised learning and Semi-supervised learning.
 
@@ -163,6 +137,11 @@ To ensure what weights and p value in KNN classifier lead to a better performanc
 and weight options are uniform and distance,
 p value is 1 and 2 (represent manhattan distance and euclidean distance).
 
+
+Using Grid search, we find that in TF-IDF, using kNN algorithm's best accuracy is 18.77\% with parameters (k = 3, p = 2, weights = "distance").
+In Embedding, using kNN algorithm's best accuracy is 23.95 \% with parameters (k = 3, p = 2, weights = "distance").
+
+
 \begin{figure}[b]
     \centering
     \includegraphics[width=0.5\textwidth]{knn_output.png}
@@ -170,19 +149,20 @@ p value is 1 and 2 (represent manhattan distance and euclidean distance).
     \label{fig:knn}
 \end{figure}
 
-Using Grid search, we find that in TF-IDF, using kNN algorithm's best accuracy is 18.77\% with parameters (k = 3, p = 2, weights = "distance").
-In Embedding, using kNN algorithm's best accuracy is 23.95 \% with parameters (k = 3, p = 2, weights = "distance").
-
-
 In the experiment, we found that K is the most important factor in kNN algorithm. 
 So we keep increasing k's value to 200.
 And set p equal to 2 and weight is "distance". 
 The output is shown in figure \ref{fig:knn}.
 
 
+From the results, we can when the k value is 106, the accuracy for tfidf is 23.20\% which is the best accuracy for tfidf.
+For embedding data, the best accuracy is 25.1\% when k is 26.
+
 
 \subsubsection{Decision Tree Classifier}
 
+Decision
+It focuses on generating classification rules displayed as decision trees that is deduced or concluded from a group of disorder and irregular instances. \cite{dt_8718711}
 
 \subsubsection{Naive Bayes Classifier}
 
@@ -196,7 +176,12 @@ The output is shown in figure \ref{fig:knn}.
 \subsection{Semi-supervised learning}
 we will use the architecture shown in figure \ref{fig:Self-trained} to train the model.
 
-
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Self-trained-semi-supervised-learning-architecture.png}
+    \caption{Self-trained semi-supervised learning architecture \cite{Self-trained-semi-supervised-learning}}
+    \label{fig:Self-trained}
+\end{figure}
 
 
 
@@ -294,6 +279,37 @@ we will use the architecture shown in figure \ref{fig:Self-trained} to train the
     \end{tikzpicture}
 \end{figure*}
 
+
+
+\begin{table*}
+    \begin{center}
+        \captionof{table}{Accuracy Comparison} \label{tab:title} 
+        \begin{tabularx}{\textwidth}{@{}l *{7}{>{\centering\arraybackslash}X} @{}}
+        \toprule
+        Model & \multicolumn{2}{c}{TFIDF} & \multicolumn{2}{c}{Embedding}\\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        & Labaled data & Unlabeled data & Labaled data & Unlabaled data \\
+        \midrule
+        
+        	KNN & 18.77 & 16.29 & 23.95 & 20.96 \\
+        	GNB & 21.99 & 21.12 & 22.91 & 22.33 \\
+        	BNB  & 21.47 & 20.43 & 21.3 & 21.65 \\
+        	Adaboost & 22.39 & 20.43 & 21.7 & 19.8 \\
+        	Decision Tree (DT) & 20.38 & 18.59 & 16.29 & 14.68 \\
+        	Adaboost + DT & 22.22 & 19.86 & 21.7 & 21.42 \\
+        	Adaboost + GNB & 21.99 & 10.99 & 17.67 & 13.82 \\
+        	Adaboost + BNB & 22.51 & 10.99 & 21.53 & 14.91 \\
+        	SVM & \textbf{25.62}$^*$ & \textbf{24.64}$^*$ & \textbf{26.89}$^*$ & \textbf{24.87}$^*$ \\
+        	\cmidrule(lr){1-5} 
+        	K-means & - & \textbf{15.66}$^*$ & - & \textbf{16.41}$^*$ \\
+        	GMM & - & 11.23 & - & 11.51 \\
+        
+        \bottomrule
+        \end{tabularx}
+        % \bigskip \vspace{In the dataset with labels, we use supervised machine learning algorithms. Then for the unlabelled part, we use self-training class supervised learning methods.}
+        % \bigskip Should be a caption
+    \end{center}
+\end{table*}
 
 
 \nocite{*}
