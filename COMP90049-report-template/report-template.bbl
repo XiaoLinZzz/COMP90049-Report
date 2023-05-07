@@ -23,6 +23,14 @@ Guo, G., Wang, H., Bell, D., Bi, Y., and Greer, K. (2003).
   Move to Meaningful Internet Systems 2003: CoopIS, DOA, and ODBASE}, pages
   986--996, Berlin, Heidelberg. Springer Berlin Heidelberg.
 
+\bibitem[Han et~al., 2022]{han-etal-2022-systematic}
+Han, X., Shen, A., Cohn, T., Baldwin, T., and Frermann, L. (2022).
+\newblock Systematic evaluation of predictive fairness.
+\newblock In {\em Proceedings of the 2nd Conference of the Asia-Pacific Chapter
+  of the Association for Computational Linguistics and the 12th International
+  Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
+  pages 68--81, Online only. Association for Computational Linguistics.
+
 \bibitem[Hassanzadeh et~al., 2018]{Self-trained-semi-supervised-learning}
 Hassanzadeh, H., Kholghi, M., Nguyen, A., and Chu, K. (2018).
 \newblock Clinical document classification using labeled and unlabeled data
@@ -32,6 +40,13 @@ Hassanzadeh, H., Kholghi, M., Nguyen, A., and Chu, K. (2018).
 Liashchynskyi, P. and Liashchynskyi, P. (2019).
 \newblock Grid search, random search, genetic algorithm: A big comparison for
   nas.
+
+\bibitem[Mani et~al., 1997]{nb_10.1007/BFb0029444}
+Mani, S., Pazzani, M.~J., and West, J. (1997).
+\newblock Knowledge discovery from a breast cancer database.
+\newblock In Keravnou, E., Garbay, C., Baud, R., and Wyatt, J., editors, {\em
+  Artificial Intelligence in Medicine}, pages 130--133, Berlin, Heidelberg.
+  Springer Berlin Heidelberg.
 
 \bibitem[Manning et~al., 2008]{manning2008introduction}
 Manning, C., Raghavan, P., and Sch{\"u}tze, H. (2008).
@@ -45,6 +60,10 @@ Reimers, N. and Gurevych, I. (2019).
   Natural Language Processing and the 9th International Joint Conference on
   Natural Language Processing (EMNLP-IJCNLP)}, pages 3982--3992, Hong Kong,
   China. Association for Computational Linguistics.
+
+\bibitem[Rejani and Selvi, 2009]{svm_rejani2009early}
+Rejani, Y. I.~A. and Selvi, S.~T. (2009).
+\newblock Early detection of breast cancer using svm classifier technique.
 
 \bibitem[Shenoy and Aithal, 2018]{Primary-Organizational-Recruitment-Sources}
 Shenoy, V. and Aithal, S. (2018).

@@ -84,9 +84,20 @@ and finally explore whether unlabelled data can be effectively combined to incre
 
 \section{Literature review}
 
+In predicting salary based on job descriptions, there are many studies that have been conducted.
+mycareersfuture dataset with job descriptions and their corresponding skills labels is presented by \cite{bhola-etal-2020-retrieving}.
+
+Many methodology are proposed to predict salary based on job descriptions, such as BERT-XMLC \cite{bhola-etal-2020-retrieving}, 
+framework for comprehensively evaluating the performance of debiasing methods \cite{han-etal-2022-systematic}.
+
+Many traditional machine learning algorithms are also mentioned in this paper, 
+such as kNN \cite{knn-Zhang2019/08}, 
+Decision Tree \cite{dt_8718711}, 
+Naive Bayes \cite{nb_10.1007/BFb0029444} and so on.
+
+
 
 \section{Methods}
-
 
 In this study, we adopt two feature representations from the raw job descriptions.
 
@@ -102,19 +113,23 @@ To find the parameters which can lead the highest performance of the machine lea
 Due to a high dimentions of the features, we adopt Grid search here because Grid search can suffer from high dimensional spaces \cite{liashchynskyi2019grid}.
 
 We train the models between TFIDF and Embedding features, but we will only choose TFIDF features to analyse the results and evaluate the models.
-To evaluate classifiers, we use the $F_1$ score that combines recall and precision in the following way: \cite{TAN2006290}
+To evaluate classifiers, we use the $F_1$ score (\ref{eq:f1}) that combines recall (\ref{eq:recall}) and precision (\ref{eq:precision}) in the following way: \cite{TAN2006290}
 
 \begin{equation}
     precision = \frac{TP}{TP + FP}
+    \label{eq:precision}
 \end{equation}
 
 \begin{equation}
     recall = \frac{TP}{TP + FN}
+    \label{eq:recall}
 \end{equation}
 
 \begin{equation}
     F_1 = 2 \times \frac{precision \times recall}{precision + recall}
+    \label{eq:f1}
 \end{equation}
+
 
 
 
@@ -133,26 +148,45 @@ In the supervised learning part, we adopt 9 different machine learning algorithm
 
 \subsubsection{KNN Classifier}
 We decide to use k-Nearest-Neighbours (kNN) as our baseline model, because the k-Nearest-Neighbours is a simple but effective method for classification \cite{10.1007/978-3-540-39964-3_62}.
-To ensure what weights and p value in KNN classifier lead to a better performance, We set k value in the range of 1 to 11,
-and weight options are uniform and distance,
-p value is 1 and 2 (represent manhattan distance and euclidean distance).
 
+To ensure what weights and p value in KNN classifier lead to a better performance,
+we set the parameters of Grid search as follows:
 
-Using Grid search, we find that in TF-IDF, using kNN algorithm's best accuracy is 18.77\% with parameters (k = 3, p = 2, weights = "distance").
-In Embedding, using kNN algorithm's best accuracy is 23.95 \% with parameters (k = 3, p = 2, weights = "distance").
+\begin{itemize}
+    \item \textbf{k}: 1 - 11
+    \item \textbf{p}: 1, 2
+    \item \textbf{weights}: uniform, distance
+\end{itemize}
 
+Using Grid search, we find that in TF-IDF, using kNN algorithm's best accuracy is 18.77\%.
+In Embedding, using kNN algorithm's best accuracy is 23.95\%.
+The best parameters are shown in the table \ref{tab:knn_results}.
 
-\begin{figure}[b]
+\begin{table}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{knn_output.png}
-    \caption{KNN Classifier}
-    \label{fig:knn}
-\end{figure}
+    \begin{tabularx}{0.45\textwidth}{@{}lcccc@{}}
+    \toprule
+    Features    & k & p & weights  & Accuracy    \\ \midrule
+    TF-IDF         & 3 & 2 & distance  & 18.77  \\
+    Embedding     & 3 & 2 & distance   & 23.95 \\ \bottomrule
+    \end{tabularx}
+    \caption{Best accuracies and parameters for kNN algorithm using TF-IDF and Embedding}
+    \label{tab:knn_results}
+\end{table}
+    
+    
 
 In the experiment, we found that K is the most important factor in kNN algorithm. 
 So we keep increasing k's value to 200.
 And set p equal to 2 and weight is "distance". 
 The output is shown in figure \ref{fig:knn}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{knn_output.png}
+    \caption{KNN Classifier}
+    \label{fig:knn}
+\end{figure}
 
 
 From the results, we can when the k value is 106, the accuracy for tfidf is 23.20\% which is the best accuracy for tfidf.
@@ -163,22 +197,120 @@ For embedding data, the best accuracy is 25.1\% when k is 26.
 
 Decision tree classifier is an effient supervised learning algorithm.
 It focuses on generating classification rules displayed as decision trees that is deduced or concluded from a group of disorder and irregular instances. \cite{dt_8718711}
-
 During the experiment, we adopted the decision tree classifier on the given dataset to see the performance.
 
+We set 5 parameters during the experiment as follows:
+
+\begin{itemize}
+    \item \textbf{criterion}: gini, entropy
+    \item \textbf{max\_depth}: 5, 10, 15
+    \item \textbf{min\_samples\_split}: 2, 5, 10
+    \item \textbf{min\_samples\_leaf}: 1, 2, 5
+    \item \textbf{splitter}: best, random
+\end{itemize}
+
+After using Grid search, we find that in TF-IDF, using decision tree classifier's best accuracy is 20.38\%.
+In embedding, using decision tree classifier's best accuracy is 18.77\%.
+The best parameters are shown in the table \ref{tab:dt_results}.
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabularx}{0.5\textwidth}{@{}lcc@{}}
+    \toprule
+    Method     &  Parameters  & Accuracy \\ \midrule
+    TF-IDF     & \begin{tabular}[t]{@{}l@{}}
+                     criterion: gini \\
+                     max\_depth: 15 \\
+                     min\_samples\_split: 10 \\
+                     min\_samples\_leaf: 2 \\
+                     splitter: random
+                   \end{tabular}  & 20.38 \\ \midrule
+    Embedding  & \begin{tabular}[t]{@{}l@{}} 
+                     criterion: entropy \\
+                     max\_depth: 5 \\
+                     min\_samples\_split: 2 \\
+                     min\_samples\_leaf: 1 \\
+                     splitter: random
+                   \end{tabular} & 18.77  \\ \bottomrule
+    \end{tabularx}
+    \caption{Best accuracies and parameters for decision tree classifier using TF-IDF and Embedding}
+    \label{tab:dt_results}
+\end{table}
+    
 
 
 \subsubsection{Naive Bayes Classifier}
 
+Naive Bayes \cite{nb_10.1007/BFb0029444} is a type of classifier based on probability.
+We adopted two types of Naive Bayes classifier: BernoulliNB (\ref{eq:bernoulli}) and GaussianNB (\ref{eq:GaussianNB}).
+
+\begin{equation}
+    P(x_i|y) = P(x_i = 1 | y)x_i + (1 - P(x_i = 1 | y))(1 - x_i)
+    \label{eq:bernoulli}
+\end{equation}
+
+\begin{equation}
+    P(x_i|y) = \frac{1}{\sqrt{2\pi\sigma^2_y}} exp (-\frac{(x_i - \mu_y)^2}{2\sigma^2_y})
+    \label{eq:GaussianNB}
+\end{equation}
+
+
+
+For naive Bayes classifier, we do not need to set parameters (as var\_smoothing does not influence a lot).
+The accuracy is shown in the table \ref{tab:nb_results}.
+
+\begin{table}[h!]
+    \centering
+    \caption{Accuracy of Naive Bayes Models}
+    \label{tab:nb_results}
+    \begin{tabular}{lcc}
+    \toprule
+    \textbf{Model} & \textbf{TF-IDF} & \textbf{EMD} \\
+    \midrule
+    GaussianNB     & 21.99 & 22.91 \\
+    BernoulliNB    & 21.47 & 21.3 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+From the table \ref{tab:nb_results}, we can see that the accuracy of GaussianNB is higher than BernoulliNB.
 
 \subsubsection{Other Classifier}
 
+In the experiment, we also tried other supervised classifiers such as SVM \cite{svm_rejani2009early}, Adaboost and some ensemble methods.
+The results are shown in the table \ref{tab:all_results}.
+Of these, the SVM model got the best accuracy of 26.89\%.
 
 \subsection{Unsupervised learning}
 
+Due to there has many unlabeled data in the dataset,
+we also tried to use unsupervised learning to train the model.
+However, the result is unsatisfactory.
+
+In the experiment, we used K-means clusting algorithm and Gaussian mixture model (GMM) algorithm to train the model.
+The accuracy is shown in the table \ref{tab:unsupervised_results}.
+
+\begin{table}[h!]
+    \centering
+    \caption{Accuracy of Unsupervised Models}
+    \label{tab:unsupervised_results}
+    \begin{tabular}{lcc}
+    \toprule
+    \textbf{Model} & \textbf{TF-IDF} & \textbf{Embedding} \\
+    \midrule
+    K-means & 15.66 & 16.41 \\
+    GMM     & 11.23 & 11.51 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+
 
 \subsection{Semi-supervised learning}
-we will use the architecture shown in figure \ref{fig:Self-trained} to train the model.
+
+For semi-supervised learning, we adopted self-training method \cite{Self-trained-semi-supervised-learning}.
+The architecture is shown in figure \ref{fig:Self-trained}.
 
 \begin{figure}[t]
     \centering
@@ -192,13 +324,37 @@ we will use the architecture shown in figure \ref{fig:Self-trained} to train the
 
 \section{Results}
 
-\section{Discussion / Critical Analysis}
-
-\section{Conclusions}
+The results of all models that are mentioned in this report are shown in the table \ref{tab:all_results}.
 
 
-
-
+\begin{table*}
+    \begin{center}
+        \captionof{table}{Accuracy Comparison} \label{tab:all_results}
+        \begin{tabularx}{\textwidth}{@{}l *{7}{>{\centering\arraybackslash}X} @{}}
+        \toprule
+        Model & \multicolumn{2}{c}{TFIDF} & \multicolumn{2}{c}{Embedding}\\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        & Labaled data & Unlabeled data & Labaled data & Unlabaled data \\
+        \midrule
+        
+        	KNN & 18.77 & 16.29 & 23.95 & 20.96 \\
+        	GNB & 21.99 & 21.12 & 22.91 & 22.33 \\
+        	BNB  & 21.47 & 20.43 & 21.3 & 21.65 \\
+        	Adaboost & 22.39 & 20.43 & 21.7 & 19.8 \\
+        	Decision Tree (DT) & 20.38 & 18.59 & 16.29 & 14.68 \\
+        	Adaboost + DT & 22.22 & 19.86 & 21.7 & 21.42 \\
+        	Adaboost + GNB & 21.99 & 10.99 & 17.67 & 13.82 \\
+        	Adaboost + BNB & 22.51 & 10.99 & 21.53 & 14.91 \\
+        	SVM & \textbf{25.62}$^*$ & \textbf{24.64}$^*$ & \textbf{26.89}$^*$ & \textbf{24.87}$^*$ \\
+        	\cmidrule(lr){1-5} 
+        	K-means & - & \textbf{15.66}$^*$ & - & \textbf{16.41}$^*$ \\
+        	GMM & - & 11.23 & - & 11.51 \\
+        
+        \bottomrule
+        \end{tabularx}
+        \bigskip The best accuracy is marked with $^*$.
+    \end{center}
+\end{table*}
 
 \begin{figure*}
     \centering
@@ -281,39 +437,21 @@ we will use the architecture shown in figure \ref{fig:Self-trained} to train the
         
         \end{axis}
     \end{tikzpicture}
+    \label{fig:all_results}
 \end{figure*}
 
 
 
-\begin{table*}
-    \begin{center}
-        \captionof{table}{Accuracy Comparison} \label{tab:title} 
-        \begin{tabularx}{\textwidth}{@{}l *{7}{>{\centering\arraybackslash}X} @{}}
-        \toprule
-        Model & \multicolumn{2}{c}{TFIDF} & \multicolumn{2}{c}{Embedding}\\
-        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-        & Labaled data & Unlabeled data & Labaled data & Unlabaled data \\
-        \midrule
-        
-        	KNN & 18.77 & 16.29 & 23.95 & 20.96 \\
-        	GNB & 21.99 & 21.12 & 22.91 & 22.33 \\
-        	BNB  & 21.47 & 20.43 & 21.3 & 21.65 \\
-        	Adaboost & 22.39 & 20.43 & 21.7 & 19.8 \\
-        	Decision Tree (DT) & 20.38 & 18.59 & 16.29 & 14.68 \\
-        	Adaboost + DT & 22.22 & 19.86 & 21.7 & 21.42 \\
-        	Adaboost + GNB & 21.99 & 10.99 & 17.67 & 13.82 \\
-        	Adaboost + BNB & 22.51 & 10.99 & 21.53 & 14.91 \\
-        	SVM & \textbf{25.62}$^*$ & \textbf{24.64}$^*$ & \textbf{26.89}$^*$ & \textbf{24.87}$^*$ \\
-        	\cmidrule(lr){1-5} 
-        	K-means & - & \textbf{15.66}$^*$ & - & \textbf{16.41}$^*$ \\
-        	GMM & - & 11.23 & - & 11.51 \\
-        
-        \bottomrule
-        \end{tabularx}
-        % \bigskip \vspace{In the dataset with labels, we use supervised machine learning algorithms. Then for the unlabelled part, we use self-training class supervised learning methods.}
-        % \bigskip Should be a caption
-    \end{center}
-\end{table*}
+\section{Discussion / Critical Analysis}
+
+\section{Conclusions}
+
+
+
+
+
+
+
 
 
 \nocite{*}

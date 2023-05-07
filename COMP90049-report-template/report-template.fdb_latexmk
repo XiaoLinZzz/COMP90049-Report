@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex report-template"] 1683295068 "report-template.aux" "report-template.bbl" "report-template" 1683298605 0
-  "./sample.bib" 1683289114 9260 5150a95c8ebc9a1adfbdfa42ecf1b975 ""
+["bibtex report-template"] 1683372767 "report-template.aux" "report-template.bbl" "report-template" 1683436328 0
+  "./sample.bib" 1683368791 12131 b0108358fb63f31a27e7be878eebd451 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291969191 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "report-template.aux" 1683298604 1360 62cd357427a0e90efcc52fc372b7beb2 "pdflatex"
+  "report-template.aux" 1683436327 2247 9d271ef470eab82dd28990d2974c56be "pdflatex"
   (generated)
   "report-template.bbl"
   "report-template.blg"
   (rewritten before read)
-["pdflatex"] 1683298602 "c:/Users/XiaoLinzzz/Documents/GitHub/IML/COMP90049 Report/COMP90049-report-template/report-template.tex" "report-template.pdf" "report-template" 1683298605 0
+["pdflatex"] 1683436325 "c:/Users/XiaoLinzzz/Documents/GitHub/IML/COMP90049 Report/COMP90049-report-template/report-template.tex" "report-template.pdf" "report-template" 1683436328 0
   "C:/Users/XiaoLinzzz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1683191914 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/XiaoLinzzz/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1683122073 12668 18e2a30b4f62d0c85bc250a70f0e679a ""
   "C:/Users/XiaoLinzzz/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1683118807 23185476 171bff5324e7fdc71c9503dd61734cee ""
@@ -28,7 +28,9 @@
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136761453 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
@@ -171,13 +173,13 @@
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1667238666 7147 be6981d9f5d866a5634048c4a11814a9 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "Self-trained-semi-supervised-learning-architecture.png" 1683128400 32957 976b5e464cb0a22310925520318678bb ""
-  "c:/Users/XiaoLinzzz/Documents/GitHub/IML/COMP90049 Report/COMP90049-report-template/report-template.tex" 1683298601 11628 edd649ee9dbd8e6201c0ba3a021928e3 ""
+  "c:/Users/XiaoLinzzz/Documents/GitHub/IML/COMP90049 Report/COMP90049-report-template/report-template.tex" 1683436324 16537 850247f506d78852475a120a5b11677e ""
   "colacl.sty" 1683116767 21520 4b33295faefce7dd9d9782fec7f3f87a ""
   "dataset_output.png" 1683285547 9469 da92fdc24c47cd3ac0945631e3009b81 ""
   "knn_output.png" 1683191818 71279 875250205e7665c005117b5f832cca11 ""
-  "report-template.aux" 1683298604 1360 62cd357427a0e90efcc52fc372b7beb2 "pdflatex"
-  "report-template.bbl" 1683295069 3219 27a15af5dc7c2ee36f80de75d53004cb "bibtex report-template"
-  "report-template.tex" 1683298601 11628 edd649ee9dbd8e6201c0ba3a021928e3 ""
+  "report-template.aux" 1683436327 2247 9d271ef470eab82dd28990d2974c56be "pdflatex"
+  "report-template.bbl" 1683372767 4237 bd2cd99325f6b7f841357ec09e359b19 "bibtex report-template"
+  "report-template.tex" 1683436324 16537 850247f506d78852475a120a5b11677e ""
   (generated)
   "report-template.aux"
   "report-template.log"

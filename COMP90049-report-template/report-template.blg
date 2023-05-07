@@ -6,45 +6,45 @@ The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 7 items.
 Database file #1: sample.bib
 Warning--empty booktitle in Self-trained-semi-supervised-learning
-You've used 10 entries,
+You've used 13 entries,
             1935 wiz_defined-function locations,
-            537 strings with 6217 characters,
-and the built_in function-call counts, 4776 in all, are:
-= -- 484
-> -- 180
-< -- 11
-+ -- 61
-- -- 59
-* -- 358
-:= -- 764
-add.period$ -- 33
-call.type$ -- 10
-change.case$ -- 77
-chr.to.int$ -- 10
-cite$ -- 11
-duplicate$ -- 215
-empty$ -- 345
-format.name$ -- 77
-if$ -- 1016
+            556 strings with 6993 characters,
+and the built_in function-call counts, 6267 in all, are:
+= -- 634
+> -- 253
+< -- 14
++ -- 85
+- -- 83
+* -- 477
+:= -- 1010
+add.period$ -- 43
+call.type$ -- 13
+change.case$ -- 102
+chr.to.int$ -- 13
+cite$ -- 14
+duplicate$ -- 277
+empty$ -- 442
+format.name$ -- 106
+if$ -- 1326
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 10
-newline$ -- 51
-num.names$ -- 32
-pop$ -- 90
+missing$ -- 12
+newline$ -- 65
+num.names$ -- 43
+pop$ -- 117
 preamble$ -- 1
-purify$ -- 78
+purify$ -- 103
 quote$ -- 0
-skip$ -- 172
+skip$ -- 220
 stack$ -- 0
-substring$ -- 331
-swap$ -- 64
-text.length$ -- 6
+substring$ -- 423
+swap$ -- 82
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 58
+type$ -- 76
 warning$ -- 1
-while$ -- 37
+while$ -- 50
 width$ -- 0
-write$ -- 133
+write$ -- 173
 (There was 1 warning)
