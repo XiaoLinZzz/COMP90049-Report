@@ -305,13 +305,6 @@ The accuracy is shown in the table \ref{tab:unsupervised_results}.
     \end{tabular}
 \end{table}
 
-
-
-\subsection{Semi-supervised learning}
-
-For semi-supervised learning, we adopted self-training method \cite{Self-trained-semi-supervised-learning}.
-The architecture is shown in figure \ref{fig:Self-trained}.
-
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.5\textwidth]{Self-trained-semi-supervised-learning-architecture.png}
@@ -319,17 +312,35 @@ The architecture is shown in figure \ref{fig:Self-trained}.
     \label{fig:Self-trained}
 \end{figure}
 
+\subsection{Semi-supervised learning}
 
+For semi-supervised learning, we adopted self-training method \cite{Self-trained-semi-supervised-learning}.
+The architecture is shown in figure \ref{fig:Self-trained}.
 
+\begin{table*}[h]
+    \centering
+    \caption{$F_1$ scores of all models}
+    \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+    \hline
+    \textbf{Method} & \multicolumn{2}{c|}{\textbf{Supervised}} & \multicolumn{2}{c|}{\textbf{Semi-supervised}} \\ \cline{2-5}
+                    & \textbf{TF-IDF} & \textbf{Emb} & \textbf{TF-IDF} & \textbf{Emb} \\ \hline
+    KNN             & 0.2118          & 0.2108       & 0.1042          & 0.2194       \\
+    DT              & 0.1602          & 0.1678       & 0.1377          & 0.1597       \\
+    GNB             & 0.1994          & 0.2082       & 0.1884          & 0.2114       \\
+    BNB             & 0.1778          & 0.1908       & 0.1761          & 0.2038       \\
+    Adaboost        & 0.1765          & 0.1651       & 0.1880          & 0.1779       \\
+    DT+Adaboost     & 0.2116          & 0.1934       & 0.1849          & 0.1905       \\
+    GNB+Adaboost    & 0.1911          & 0.1605       & 0.1154          & 0.1263       \\
+    SVM             & 0.2466          & 0.2616       & 0.2333          & 0.2389       \\ \hline
+    \end{tabularx}
+    \label{tab:f1_results}
+\end{table*}
 
-\section{Results}
-
-The results of all models that are mentioned in this report are shown in the table \ref{tab:all_results}.
 
 
 \begin{table*}
     \begin{center}
-        \captionof{table}{Accuracy Comparison} \label{tab:all_results}
+        \captionof{table}{Accuracy of all models} \label{tab:all_results}
         \begin{tabularx}{\textwidth}{@{}l *{7}{>{\centering\arraybackslash}X} @{}}
         \toprule
         Model & \multicolumn{2}{c}{TFIDF} & \multicolumn{2}{c}{Embedding}\\
@@ -352,9 +363,26 @@ The results of all models that are mentioned in this report are shown in the tab
         
         \bottomrule
         \end{tabularx}
-        \bigskip The best accuracy is marked with $^*$.
+        \caption*{Note: The ublabeled data of supervised learning means using the self-training method.}
     \end{center}
 \end{table*}
+
+The method of self-training is to use the labeled data to train the model,
+and then use the model to predict the unlabeled data.
+If the probability of the predicted label is greater than the threshold, 
+then we add the unlabeled data with its predicted labels to the training set and retrain the model.
+
+In the experiment, we define two self-trained models, one with the threshold as 0.8, and one without threshold.
+We dicover that self-trained model can not improve the performance of the model.
+The accuracy is shown in the table \ref{tab:all_results}.
+
+
+
+\section{Results}
+
+The results of all models that are mentioned in this report are shown in the table \ref{tab:all_results} (accuracy) ,table \ref{tab:f1_results} ($F_1$ score),
+and the line chart (Accuracy Comparison).
+
 
 \begin{figure*}
     \centering
@@ -437,12 +465,24 @@ The results of all models that are mentioned in this report are shown in the tab
         
         \end{axis}
     \end{tikzpicture}
-    \label{fig:all_results}
+    \caption*{}
+    \label{fig:all_acc_results}
 \end{figure*}
 
 
 
 \section{Discussion / Critical Analysis}
+
+Through the experiment, we discover that unlabelled data does not shows an improvement after adopting self-trained method.
+
+After I plot the probability estimates by using the predict\_proba method in sklearn,
+I discover that the probability of the predicted labels do not have a high confidence (most of them are below 0.4).
+
+
+
+
+
+
 
 \section{Conclusions}
 
