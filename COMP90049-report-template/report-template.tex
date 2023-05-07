@@ -113,7 +113,7 @@ To find the parameters which can lead the highest performance of the machine lea
 Due to a high dimentions of the features, we adopt Grid search here because Grid search can suffer from high dimensional spaces \cite{liashchynskyi2019grid}.
 
 We train the models between TFIDF and Embedding features, but we will only choose TFIDF features to analyse the results and evaluate the models.
-To evaluate classifiers, we use the $F_1$ score (\ref{eq:f1}) that combines recall (\ref{eq:recall}) and precision (\ref{eq:precision}) in the following way: \cite{TAN2006290}
+To evaluate classifiers, we use the accuracy and $F_1$ score (\ref{eq:f1}) that combines recall (\ref{eq:recall}) and precision (\ref{eq:precision}) in the following way: \cite{TAN2006290}
 
 \begin{equation}
     precision = \frac{TP}{TP + FP}
@@ -331,28 +331,10 @@ The architecture is shown in figure \ref{fig:Self-trained}.
     Adaboost        & 0.1765          & 0.1651       & 0.1880          & 0.1779       \\
     DT+Adaboost     & 0.2116          & 0.1934       & 0.1849          & 0.1905       \\
     GNB+Adaboost    & 0.1911          & 0.1605       & 0.1154          & 0.1263       \\
-    SVM             & 0.2466          & 0.2616       & 0.2333          & 0.2389       \\ \hline
+    SVM             & \textbf{0.2466}$^*$  & \textbf{0.2616}$^*$       & \textbf{0.2333}$^*$          & \textbf{0.2389} $^*$        \\ \hline
     \end{tabularx}
     \label{tab:f1_results}
 \end{table*}
-
-
-
-The method of self-training is to use the labeled data to train the model,
-and then use the model to predict the unlabeled data.
-If the probability of the predicted label is greater than the threshold, 
-then we add the unlabeled data with its predicted labels to the training set and retrain the model.
-
-In the experiment, we define two self-trained models, one with the threshold as 0.8, and one without threshold.
-We dicover that self-trained model can not improve the performance of the model.
-The accuracy is shown in the table \ref{tab:all_results}.
-
-
-
-\section{Results}
-
-The results of all models that are mentioned in this report are shown in the table \ref{tab:all_results} (accuracy) ,table \ref{tab:f1_results} ($F_1$ score),
-and the line chart (Accuracy Comparison).
 
 \begin{table*}
     \begin{center}
@@ -382,6 +364,24 @@ and the line chart (Accuracy Comparison).
         \caption*{Note: The ublabeled data of supervised learning means using the self-training method.}
     \end{center}
 \end{table*}
+
+The method of self-training is to use the labeled data to train the model,
+and then use the trained model to predict the unlabeled data's label.
+If the probability of the predicted label is greater than the threshold, 
+then we add the unlabeled data with its predicted labels to the training set and retrain the model.
+
+In the experiment, we define two self-trained models, one with the threshold as 0.8, and one without threshold.
+We dicover that self-trained model can not improve the performance of the model.
+The accuracy is shown in the table \ref{tab:all_results}.
+
+
+
+\section{Results}
+
+In this section, we present the results of our experiments.
+We evaluate the performance of our models by using the $F_1$ score and accuracy.
+Table \ref{tab:f1_results} shows the $F_1$ scores of all models,
+and table \ref{tab:all_results} shows the accuracy of all models.
 
 
 \begin{figure*}
@@ -471,12 +471,14 @@ and the line chart (Accuracy Comparison).
 
 
 
-\section{Discussion / Critical Analysis}
+\section{Discussion}
+
+Through the $F_1$ score 
 
 Through the experiment, we discover that unlabelled data does not shows an improvement after adopting self-trained method.
 
 After I plot the probability estimates by using the predict\_proba method in sklearn,
-I discover that the probability of the predicted labels do not have a high confidence (most of them are below 0.4).
+I discover that the probability of the predicted labels do not have a high probability (most of them are below 0.4).
 
 
 
