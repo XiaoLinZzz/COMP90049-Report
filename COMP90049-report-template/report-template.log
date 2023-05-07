@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.8)  7 MAY 2023 18:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.8)  7 MAY 2023 18:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -548,7 +548,7 @@ Overfull \hbox (44.43536pt too wide) in paragraph at lines 467--468
  [][] 
  []
 
-(./report-template.bbl [4]
+(./report-template.bbl
 Underfull \hbox (badness 1092) in paragraph at lines 45--50
 \OT1/cmr/m/n/10.95 database.  In Ker-av-nou, E., Gar-bay, C.,
  []
@@ -558,7 +558,13 @@ Underfull \hbox (badness 1694) in paragraph at lines 52--55
 []\OT1/cmr/m/n/10.95 Manning, C., Ragha-van, P., and Sch^^?utze,
  []
 
-[5]) [6
+[4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]) [6
 
 ] (./report-template.aux) ) 
 Here is how much of TeX's memory you used:
@@ -570,7 +576,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,19n,103p,798b,2311s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on report-template.pdf (6 pages, 266372 bytes).
+Output written on report-template.pdf (6 pages, 266395 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream

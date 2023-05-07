@@ -338,6 +338,22 @@ The architecture is shown in figure \ref{fig:Self-trained}.
 
 
 
+The method of self-training is to use the labeled data to train the model,
+and then use the model to predict the unlabeled data.
+If the probability of the predicted label is greater than the threshold, 
+then we add the unlabeled data with its predicted labels to the training set and retrain the model.
+
+In the experiment, we define two self-trained models, one with the threshold as 0.8, and one without threshold.
+We dicover that self-trained model can not improve the performance of the model.
+The accuracy is shown in the table \ref{tab:all_results}.
+
+
+
+\section{Results}
+
+The results of all models that are mentioned in this report are shown in the table \ref{tab:all_results} (accuracy) ,table \ref{tab:f1_results} ($F_1$ score),
+and the line chart (Accuracy Comparison).
+
 \begin{table*}
     \begin{center}
         \captionof{table}{Accuracy of all models} \label{tab:all_results}
@@ -366,22 +382,6 @@ The architecture is shown in figure \ref{fig:Self-trained}.
         \caption*{Note: The ublabeled data of supervised learning means using the self-training method.}
     \end{center}
 \end{table*}
-
-The method of self-training is to use the labeled data to train the model,
-and then use the model to predict the unlabeled data.
-If the probability of the predicted label is greater than the threshold, 
-then we add the unlabeled data with its predicted labels to the training set and retrain the model.
-
-In the experiment, we define two self-trained models, one with the threshold as 0.8, and one without threshold.
-We dicover that self-trained model can not improve the performance of the model.
-The accuracy is shown in the table \ref{tab:all_results}.
-
-
-
-\section{Results}
-
-The results of all models that are mentioned in this report are shown in the table \ref{tab:all_results} (accuracy) ,table \ref{tab:f1_results} ($F_1$ score),
-and the line chart (Accuracy Comparison).
 
 
 \begin{figure*}
