@@ -8,6 +8,12 @@ Bhola, A., Halder, K., Prasad, A., and Kan, M.-Y. (2020).
   Computational Linguistics}, pages 5832--5842, Barcelona, Spain (Online).
   International Committee on Computational Linguistics.
 
+\bibitem[Culp and Michailidis, 2008]{4359365}
+Culp, M. and Michailidis, G. (2008).
+\newblock Graph-based semisupervised learning.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  30(1):174--179.
+
 \bibitem[Dutta et~al., 2018]{dt_8718711}
 Dutta, S., Halder, A., and Dasgupta, K. (2018).
 \newblock Design of a novel prediction engine for predicting suitable salary
@@ -52,6 +58,18 @@ Mani, S., Pazzani, M.~J., and West, J. (1997).
 Manning, C., Raghavan, P., and Sch{\"u}tze, H. (2008).
 \newblock {\em Introduction to Information Retrieval}.
 \newblock An Introduction to Information Retrieval. Cambridge University Press.
+
+\bibitem[Nguyen et~al., 2019]{DBLP:journals/corr/abs-1910-01842}
+Nguyen, D.~T., Mummadi, C.~K., Ngo, T., Nguyen, T. H.~P., Beggel, L., and Brox,
+  T. (2019).
+\newblock {SELF:} learning to filter noisy labels with self-ensembling.
+\newblock {\em CoRR}, abs/1910.01842.
+
+\bibitem[Ning et~al., 2021]{ning2021review}
+Ning, X., Wang, X., Xu, S., Cai, W., Zhang, L., Yu, L., and Li, W. (2021).
+\newblock A review of research on co-training.
+\newblock {\em Concurrency and computation: practice and experience}, page
+  e6276.
 
 \bibitem[Reimers and Gurevych, 2019]{reimers-gurevych-2019-sentence}
 Reimers, N. and Gurevych, I. (2019).

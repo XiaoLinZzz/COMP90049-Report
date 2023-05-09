@@ -82,6 +82,7 @@ and finally explore whether unlabelled data can be effectively combined to incre
     \label{fig:dataset_output}
 \end{figure}
 
+
 \section{Literature review}
 
 In predicting salary based on job descriptions, there are many studies that have been conducted.
@@ -95,11 +96,15 @@ such as kNN \cite{knn-Zhang2019/08},
 Decision Tree \cite{dt_8718711}, 
 Naive Bayes \cite{nb_10.1007/BFb0029444} and so on.
 
+In the report, we also propose the methods may be helpful to improve the performance of the model in the future work,
+such as co-training \cite{ning2021review}, self-ensembling \cite{DBLP:journals/corr/abs-1910-01842}, and graph-based \cite{4359365} methods.
+
 
 
 \section{Methods}
 
 In this study, we adopt two feature representations from the raw job descriptions.
+
 
 \begin{itemize}
     \item \textbf{TF-IDF}: We compute the TF-IDF vectors for job descriptions using the method proposed by \cite{manning2008introduction}. This method captures the importance of terms within a document and across the entire corpus.
@@ -107,13 +112,11 @@ In this study, we adopt two feature representations from the raw job description
 \end{itemize}
 
 
-Through these two features, we explore three different machine learning algorithms paradigms: Supervised learning, Unsupervised learning and Semi-supervised learning.
+In our investigation, we explore three distinct machine learning algorithm paradigms: Supervised Learning, Unsupervised Learning, and Semi-supervised Learning, focusing on two primary features: TFIDF and Embedding.
 
-To find the parameters which can lead the highest performance of the machine learning algorithms, we consider to use some search strategies.
-Due to a high dimentions of the features, we adopt Grid search here because Grid search can suffer from high dimensional spaces \cite{liashchynskyi2019grid}.
+To identify the optimal parameters that lead to the highest performance of the machine learning algorithms, we consider employing search strategies such as Grid Search. Due to the high dimensionality of the feature space, Grid Search is chosen as it is capable of handling high dimensional spaces effectively, as discussed by Liashchynskyi et al. \cite{liashchynskyi2019grid}.
 
-We train the models between TFIDF and Embedding features, but we will only choose TFIDF features to analyse the results and evaluate the models.
-To evaluate classifiers, we use the accuracy and $F_1$ score (\ref{eq:f1}) that combines recall (\ref{eq:recall}) and precision (\ref{eq:precision}) in the following way: \cite{TAN2006290}
+While training the models, we experiment with both TFIDF and Embedding features. However, for the purpose of result analysis and model evaluation, we exclusively focus on the TFIDF features. To assess the performance of the classifiers, we employ accuracy and the $F_1$ score (\ref{eq:f1}), a widely-used evaluation metric that combines recall (\ref{eq:recall}) and precision (\ref{eq:precision}) in the following manner, as described by Tan et al. \cite{TAN2006290}:
 
 \begin{equation}
     precision = \frac{TP}{TP + FP}
@@ -131,7 +134,7 @@ To evaluate classifiers, we use the accuracy and $F_1$ score (\ref{eq:f1}) that 
 \end{equation}
 
 
-
+By leveraging these evaluation metrics and search strategies, we aim to thoroughly investigate the performance of the three machine learning paradigms and draw meaningful insights from the results to enhance the overall effectiveness of our models.
 
 
 
@@ -161,18 +164,6 @@ we set the parameters of Grid search as follows:
 Using Grid search, we find that in TF-IDF, using kNN algorithm's best accuracy is 18.77\%.
 In Embedding, using kNN algorithm's best accuracy is 23.95\%.
 The best parameters are shown in the table \ref{tab:knn_results}.
-
-\begin{table}[h]
-    \centering
-    \begin{tabularx}{0.45\textwidth}{@{}lcccc@{}}
-    \toprule
-    Features    & k & p & weights  & Accuracy    \\ \midrule
-    TF-IDF         & 3 & 2 & distance  & 18.77  \\
-    Embedding     & 3 & 2 & distance   & 23.95 \\ \bottomrule
-    \end{tabularx}
-    \caption{Best accuracies and parameters for kNN algorithm using TF-IDF and Embedding}
-    \label{tab:knn_results}
-\end{table}
     
     
 
@@ -257,8 +248,8 @@ We adopted two types of Naive Bayes classifier: BernoulliNB (\ref{eq:bernoulli})
 
 
 
-For naive Bayes classifier, we do not need to set parameters (as var\_smoothing does not influence a lot).
-The accuracy is shown in the table \ref{tab:nb_results}.
+For the GaussianNB classifier, parameter tuning is generally not necessary, as the var\_smoothing parameter typically does not have a significant impact on the model's performance. On the other hand, for the BernoulliNB classifier, we fine-tune one parameter, alpha, to achieve the best possible accuracy. 
+The accuracy results for both classifiers are presented in Table \ref{tab:nb_results}.
 
 \begin{table}[h!]
     \centering
@@ -305,12 +296,13 @@ The accuracy is shown in the table \ref{tab:unsupervised_results}.
     \end{tabular}
 \end{table}
 
-\begin{figure}[t]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Self-trained-semi-supervised-learning-architecture.png}
     \caption{Self-trained semi-supervised learning architecture \cite{Self-trained-semi-supervised-learning}}
     \label{fig:Self-trained}
 \end{figure}
+
 
 \subsection{Semi-supervised learning}
 
@@ -337,6 +329,26 @@ The architecture is shown in figure \ref{fig:Self-trained}.
     \end{tabularx}
     \label{tab:f1_results}
 \end{table*}
+
+
+The method of self-training is to use the labeled data to train the model,
+and then use the trained model to predict the unlabeled data's label.
+If the probability of the predicted label is greater than the threshold, 
+then we add the unlabeled data with its predicted labels to the training set and retrain the model.
+
+On the basis of this, we using the unlabeled data by iteratively training the model and selecting the high-confidence (greater than the threshold).
+We set two conditions for stopping the iteration:
+
+\begin{itemize}
+    \item There is no high-confidence samples in the unlabeled dataset.
+          (high-confidence means the probability of the predicted label is greater than the threshold)
+
+    \item There is no improvement after iterations. 
+          The moethod keep tracking the best accuracy that is achieved by the model on the validation set.
+          If the accuracy does not improve of 3 iterations, the method will stop.
+          This helps avoid the overfitting and saves compute resources and time.
+\end{itemize}
+
 
 \begin{table*}
     \begin{center}
@@ -367,23 +379,6 @@ The architecture is shown in figure \ref{fig:Self-trained}.
     \end{center}
 \end{table*}
 
-The method of self-training is to use the labeled data to train the model,
-and then use the trained model to predict the unlabeled data's label.
-If the probability of the predicted label is greater than the threshold, 
-then we add the unlabeled data with its predicted labels to the training set and retrain the model.
-
-On the basis of this, we using the unlabeled data by iteratively training the model and selecting the high-confidence (greater than the threshold).
-We set two conditions for stopping the iteration:
-
-\begin{itemize}
-    \item There is no high-confidence samples in the unlabeled dataset.
-          (high-confidence means the probability of the predicted label is greater than the threshold)
-
-    \item There is no improvement after iterations. 
-          The moethod keep tracking the best accuracy that is achieved by the model on the validation set.
-          If the accuracy does not improve of 3 iterations, the method will stop.
-          This helps avoid the overfitting and saves compute resources and time.
-\end{itemize}
 
 The goal is to improve the performance of the model by using the unlabeled data.
 
@@ -393,6 +388,71 @@ The accuracy is shown in the table \ref{tab:all_results}.
 
 We discover that the self-trained method can not improve much performance of the model, 
 some accuracy have even decreased.
+
+
+
+
+\section{Results}
+
+In this section, we present the results of our experiments.
+We evaluate the performance of our models by using the $F_1$ score and accuracy.
+The results which shown in the table \ref{tab:all_results} and table \ref{tab:f1_results} are the results of models with best parameters after adopting grid search.
+
+Table \ref{tab:f1_results} shows the $F_1$ scores of all models,
+and table \ref{tab:all_results} shows the accuracy of all models.
+
+
+
+In the experiment, we adopt the wandb to record the our runs results.
+The detailed results of the experiment will be published in the wandb reporepository \footnote{Due to it is anonymous, it can not be shown now.}.
+
+
+
+
+\section{Discussion}
+
+In this study, we explore the performance of various machine learning models on the task of predicting salary based on job descriptions using
+supervised, unsupervised and semi-supervised learning algorithms.
+The objective is to determine the efficacy of these approaches and identify the best performing model for this task.
+
+Our result indicate that the overall performance of the models is not satisfactory,
+with approximately 20\% for most models.
+Among the models, we find that the SVM model got the best accuracy of 26.89\% and the best $F_1$ score 0.2616.
+
+In semi-supervised learning, we observe that the incorporation of unlabeled data using trained model does not consistently improve the performance.
+After checking the predicted probabilities generated by the predict\_proba method in scikit-learn,
+we find that the probability of the predicted labels do not have a high probability (most of them are below 0.4).
+As a result, when we add all the unlabled data with its predicted labels to the training set,
+the data who has a low probability sometimes get an incorrect predicted label.
+This is a reason that make the accuracy and $F_1$ score decrease.
+
+
+To address this probelm, We explore the possibility of setting a threshold to filter out instances with low probability estimates.
+following the approach proposed by \cite{Self-trained-semi-supervised-learning}.
+By iteratively training the model and selecting the high-confidence (greater than the threshold) unlabeled data,
+which is effiently reduce the impact of low-confidence values.
+However, it still can not lead a better performance to the models.
+
+This suggests that the self-training method with a confidence threshold can not use unlabelled data to improve the performance of the model in this task.
+I think the further optimization of the model parameters and the feature engineering of the data may be helpful to improve the performance of the model.
+
+
+\section{Conclusions}
+
+In conclusion, our study demonstrates that the challenges in leveraging unlabeled data to improve the performance of the model.
+The SVM model achieved the best performance in this task but the overall accuracy and $F_1$ score remains low.
+Furthermore, the self-training method with confidence threshold does not consistently improve the performance of the models,
+which suggests that the further research and optimization in semi-supervised learning methods for this task is needed.
+
+In addtion to the aforementioned method, other semi-supervised learning techniques such as co-training \cite{ning2021review}, self-ensembling \cite{DBLP:journals/corr/abs-1910-01842}, and graph-based \cite{4359365} methods can be explored in the future work.
+Furthermore, deep learning models such as transformers amd neural networks can be explored to improve the performance of the model in this task,
+as they have demonstrated superior performance in natural language processing tasks in recent years.
+
+
+In summary, although the limited success achieved with the SVM model and the self-training method in this study,
+there are still having numerous avenues for future exploration and research in predicting salaries based on job descriptions.
+By exploring these avenues, we can potentially improve the performance of the model and develop a more effective and robust model for this task.
+
 
 
 \begin{figure*}
@@ -479,63 +539,6 @@ some accuracy have even decreased.
     \caption*{}
     \label{fig:all_acc_results}
 \end{figure*}
-
-
-\section{Results}
-
-In this section, we present the results of our experiments.
-We evaluate the performance of our models by using the $F_1$ score and accuracy.
-The results which shown in the table \ref{tab:all_results} and table \ref{tab:f1_results} are the results of models with best parameters after adopting grid search.
-
-Table \ref{tab:f1_results} shows the $F_1$ scores of all models,
-and table \ref{tab:all_results} shows the accuracy of all models.
-
-
-
-In the experiment, we adopt the wandb to record the our runs results.
-The detailed results of the experiment will be published in the wandb reporepository \footnote{Due to it is anonymous, it can not be shown now.}.
-
-
-
-
-\section{Discussion}
-
-In this study, we explore the performance of various machine learning models on the task of predicting salary based on job descriptions using
-supervised, unsupervised and semi-supervised learning algorithms.
-
-Our result indicate that the overall performance of the models is not satisfactory,
-with approximately 20\% for most models.
-Among the models, we find that the SVM model got the best accuracy of 26.89\% and the best $F_1$ score 0.2616.
-
-In semi-supervised learning, we observe that the incorporation of unlabeled data using trained model does not consistently improve the performance.
-After checking the predicted probabilities generated by the predict\_proba method in scikit-learn,
-we find that the probability of the predicted labels do not have a high probability (most of them are below 0.4).
-As a result, when we add all the unlabled data with its predicted labels to the training set,
-the data who has a low probability sometimes get an incorrect predicted label.
-This is a reason that make the accuracy and $F_1$ score decrease.
-
-
-To address this probelm, We explore the possibility of setting a threshold to filter out instances with low probability estimates.
-following the approach proposed by \cite{Self-trained-semi-supervised-learning}.
-By iteratively training the model and selecting the high-confidence (greater than the threshold) unlabeled data,
-which is effiently reduce the impact of low-confidence values.
-However, it still can not lead a better performance to the models.
-
-This suggests that the self-training method with a confidence threshold can not use unlabelled data to improve the performance of the model in this task.
-I think the further optimization of the model parameters and the feature engineering of the data may be helpful to improve the performance of the model.
-
-
-
-\section{Conclusions}
-
-In conclusion, our study demonstrates that the challenges in leveraging unlabeled data to improve the performance of the model.
-The SVM model achieved the best performance in this task but the overall accuracy and $F_1$ score remains low.
-Furthermore, the self-training method with confidence threshold does not consistently improve the performance of the models,
-which suggests that the further research and optimization in semi-supervised learning methods for this task is needed.
-
-In addtion to the aforementioned method, other semi-supervised learning techniques such as co-training, self-ensembling, and graph-based methods can be explored in the future work.
-Furthermore, deep learning models such as transformers amd neural networks can be explored to improve the performance of the model in this task,
-as they have demonstrated superior performance in natural language processing tasks in recent years.
 
 
 \nocite{*}
