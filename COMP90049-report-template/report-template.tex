@@ -280,7 +280,7 @@ From the table \ref{tab:nb_results}, we can see that the accuracy of GaussianNB 
 
 In the experiment, we also tried other supervised classifiers such as SVM \cite{svm_rejani2009early}, Adaboost and some ensemble methods.
 The results are shown in the table \ref{tab:all_results}.
-Of these, the SVM model got the best accuracy of 26.89\%.
+Of these, the SVM model got the best accuracy of 26.89\% in embedding features.
 
 \subsection{Unsupervised learning}
 
@@ -394,8 +394,14 @@ some accuracy have even decreased.
 
 In this section, we present the results of our experiments.
 We evaluate the performance of our models by using the $F_1$ score and accuracy.
+The results which shown in the table \ref{tab:all_results} and table \ref{tab:f1_results} are the results of models with best parameters after adopting grid search.
+
 Table \ref{tab:f1_results} shows the $F_1$ scores of all models,
 and table \ref{tab:all_results} shows the accuracy of all models.
+
+In the experiment, we adopt the wandb to record the our runs results.
+The detailed results of the experiment will be published in the wandb reporepository \footnote{Due to it is anonymous, it can not be shown now.}.
+
 
 
 \begin{figure*}
@@ -487,13 +493,27 @@ and table \ref{tab:all_results} shows the accuracy of all models.
 
 \section{Discussion}
 
-Through the $F_1$ score, 
-
+Through the $F_1$ score 
 
 Through the experiment, we discover that unlabelled data does not shows an improvement after adopting self-trained method.
 
+
+We test supervised learning, unsupervised learning and semi-supervised learning. 
+However, the accuracy is about 20\%.
+Of these, the SVM model got the best accuracy of 26.89\% and the best $F_1$ score 0.2616.
+which increase 1.27\% compared with the baseline model (kNN).
+
+
 After I plot the probability estimates by using the predict\_proba method in sklearn,
 I discover that the probability of the predicted labels do not have a high probability (most of them are below 0.4).
+
+So, when I apply all the unlabled data with its predicted labels to the training set,
+the data who has a low probability sometimes get an incorrect predicted label. 
+This is a reason that make the accuracy and $F_1$ score decrease.
+
+After that, we search if there has a method to avoid this probelm.
+We find that we can set a threshold to filter the data who has a low probability. \cite{Self-trained-semi-supervised-learning}
+We set the threshold as 0.8, however, it still not improve the performance.
 
 
 
