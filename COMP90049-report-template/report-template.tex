@@ -317,6 +317,8 @@ The accuracy is shown in the table \ref{tab:unsupervised_results}.
 For semi-supervised learning, we adopted self-training method \cite{Self-trained-semi-supervised-learning}.
 The architecture is shown in figure \ref{fig:Self-trained}.
 
+
+
 \begin{table*}[h]
     \centering
     \caption{$F_1$ scores of all models}
@@ -346,12 +348,12 @@ The architecture is shown in figure \ref{fig:Self-trained}.
         & Labaled data & Unlabeled data & Labaled data & Unlabaled data \\
         \midrule
         
-        	KNN & 18.77 & 16.29 & 23.95 & 20.96 \\
-        	GNB & 21.99 & 21.12 & 22.91 & 22.33 \\
-        	BNB  & 21.47 & 20.43 & 21.3 & 21.65 \\
+        	KNN & 18.77 & 20.21 & 23.95 & 25.1 \\
+        	GNB & 21.99 & 21.12 & 22.91 & 21.99 \\
+        	BNB  & 21.47 & 20.43 & 21.3 & 20.84 \\
         	Adaboost & 22.39 & 20.43 & 21.7 & 19.8 \\
-        	Decision Tree (DT) & 20.38 & 18.59 & 16.29 & 14.68 \\
-        	Adaboost + DT & 22.22 & 19.86 & 21.7 & 21.42 \\
+        	Decision Tree (DT) & 20.38 & 20.03   & 16.29 & 17.9 \\
+        	Adaboost + DT & 22.22 & 19.86 & 21.7 & 23.2 \\
         	Adaboost + GNB & 21.99 & 10.99 & 17.67 & 13.82 \\
         	Adaboost + BNB & 22.51 & 10.99 & 21.53 & 14.91 \\
         	SVM & \textbf{25.62}$^*$ & \textbf{24.64}$^*$ & \textbf{26.89}$^*$ & \textbf{24.87}$^*$ \\
@@ -370,10 +372,22 @@ and then use the trained model to predict the unlabeled data's label.
 If the probability of the predicted label is greater than the threshold, 
 then we add the unlabeled data with its predicted labels to the training set and retrain the model.
 
+On the basis of this, we using the unlabeled data by iteratively training the model and selecting the high-confidence (greater than the threshold).
+We set two conditions for stopping the iteration:
+
+\begin{itemize}
+    \item There is no high-confidence samples in the unlabeled dataset.
+    \item There is no improvement after iterations. 
+\end{itemize}
+
+The goal is to improve the performance of the model by using the unlabeled data.
+
 In the experiment, we define two self-trained models, one with the threshold as 0.8, and one without threshold.
 We dicover that self-trained model can not improve the performance of the model.
 The accuracy is shown in the table \ref{tab:all_results}.
 
+We discover that the self-trained method can not improve much performance of the model, 
+some accuracy have even decreased.
 
 
 \section{Results}
@@ -473,7 +487,8 @@ and table \ref{tab:all_results} shows the accuracy of all models.
 
 \section{Discussion}
 
-Through the $F_1$ score 
+Through the $F_1$ score, 
+
 
 Through the experiment, we discover that unlabelled data does not shows an improvement after adopting self-trained method.
 
