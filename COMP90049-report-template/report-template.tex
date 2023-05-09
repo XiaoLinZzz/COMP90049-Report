@@ -377,7 +377,12 @@ We set two conditions for stopping the iteration:
 
 \begin{itemize}
     \item There is no high-confidence samples in the unlabeled dataset.
+          (high-confidence means the probability of the predicted label is greater than the threshold)
+
     \item There is no improvement after iterations. 
+          The moethod keep tracking the best accuracy that is achieved by the model on the validation set.
+          If the accuracy does not improve of 3 iterations, the method will stop.
+          This helps avoid the overfitting and saves compute resources and time.
 \end{itemize}
 
 The goal is to improve the performance of the model by using the unlabeled data.
@@ -388,16 +393,6 @@ The accuracy is shown in the table \ref{tab:all_results}.
 
 We discover that the self-trained method can not improve much performance of the model, 
 some accuracy have even decreased.
-
-
-\section{Results}
-
-In this section, we present the results of our experiments.
-We evaluate the performance of our models by using the $F_1$ score and accuracy.
-The results which shown in the table \ref{tab:all_results} and table \ref{tab:f1_results} are the results of models with best parameters after adopting grid search.
-
-Table \ref{tab:f1_results} shows the $F_1$ scores of all models,
-and table \ref{tab:all_results} shows the accuracy of all models.
 
 
 \begin{figure*}
@@ -486,6 +481,17 @@ and table \ref{tab:all_results} shows the accuracy of all models.
 \end{figure*}
 
 
+\section{Results}
+
+In this section, we present the results of our experiments.
+We evaluate the performance of our models by using the $F_1$ score and accuracy.
+The results which shown in the table \ref{tab:all_results} and table \ref{tab:f1_results} are the results of models with best parameters after adopting grid search.
+
+Table \ref{tab:f1_results} shows the $F_1$ scores of all models,
+and table \ref{tab:all_results} shows the accuracy of all models.
+
+
+
 In the experiment, we adopt the wandb to record the our runs results.
 The detailed results of the experiment will be published in the wandb reporepository \footnote{Due to it is anonymous, it can not be shown now.}.
 
@@ -494,7 +500,7 @@ The detailed results of the experiment will be published in the wandb reporeposi
 
 \section{Discussion}
 
-Through the $F_1$ score 
+% Through the $F_1$ score
 
 Through the experiment, we discover that unlabelled data does not shows an improvement after adopting self-trained method.
 
@@ -523,6 +529,16 @@ We set the threshold as 0.8, however, it still not improve the performance.
 
 
 \section{Conclusions}
+
+In this study, we explore the performance of various machine learning models on the task of predicting salary based on job descriptions using
+supervised, unsupervised and semi-supervised learning algorithms.
+
+Our result indicate that the overall performance of the models is not satisfactory,
+with approximately 20\% for most models.
+Among the models, we find that the SVM model got the best accuracy of 26.89\% and the best $F_1$ score 0.2616.
+
+In semi-supervised learning, we observe that the incorporation of unlabeled data using the self-training does not consistently improve the performance of all models.
+
 
 
 
