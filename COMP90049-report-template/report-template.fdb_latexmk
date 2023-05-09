@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex report-template"] 1683600961 "report-template.aux" "report-template.bbl" "report-template" 1683601189 0
+["bibtex report-template"] 1683601392 "report-template.aux" "report-template.bbl" "report-template" 1683601397 0
   "./sample.bib" 1683368791 12131 b0108358fb63f31a27e7be878eebd451 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291969191 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "report-template.aux" 1683601188 2338 3d2612649e11b9bb7f10d6fb0b9f8766 "pdflatex"
+  "report-template.aux" 1683601396 2338 3e27dd5061d59040efe595898b1bcc81 "pdflatex"
   (generated)
   "report-template.bbl"
   "report-template.blg"
   (rewritten before read)
-["pdflatex"] 1683601187 "c:/Users/XiaoLinzzz/Documents/GitHub/IML/COMP90049 Report/COMP90049-report-template/report-template.tex" "report-template.pdf" "report-template" 1683601189 0
+["pdflatex"] 1683601394 "c:/Users/XiaoLinzzz/Documents/GitHub/IML/COMP90049 Report/COMP90049-report-template/report-template.tex" "report-template.pdf" "report-template" 1683601397 0
   "C:/Users/XiaoLinzzz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1683191914 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/XiaoLinzzz/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1683122073 12668 18e2a30b4f62d0c85bc250a70f0e679a ""
   "C:/Users/XiaoLinzzz/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1683118807 23185476 171bff5324e7fdc71c9503dd61734cee ""
@@ -178,13 +178,13 @@
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1667238666 7147 be6981d9f5d866a5634048c4a11814a9 ""
   "C:/Users/XiaoLinzzz/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "Self-trained-semi-supervised-learning-architecture.png" 1683128400 32957 976b5e464cb0a22310925520318678bb ""
-  "c:/Users/XiaoLinzzz/Documents/GitHub/IML/COMP90049 Report/COMP90049-report-template/report-template.tex" 1683601186 20698 f92c6a4d52fb58384c3e0e5ae682b3a9 ""
+  "c:/Users/XiaoLinzzz/Documents/GitHub/IML/COMP90049 Report/COMP90049-report-template/report-template.tex" 1683601392 20700 8f929629c0cd8e356d3cd526ab6b0d1c ""
   "colacl.sty" 1683116767 21520 4b33295faefce7dd9d9782fec7f3f87a ""
   "dataset_output.png" 1683285547 9469 da92fdc24c47cd3ac0945631e3009b81 ""
   "knn_output.png" 1683191818 71279 875250205e7665c005117b5f832cca11 ""
-  "report-template.aux" 1683601188 2338 3d2612649e11b9bb7f10d6fb0b9f8766 "pdflatex"
-  "report-template.bbl" 1683600961 4237 bd2cd99325f6b7f841357ec09e359b19 "bibtex report-template"
-  "report-template.tex" 1683601186 20698 f92c6a4d52fb58384c3e0e5ae682b3a9 ""
+  "report-template.aux" 1683601396 2338 3e27dd5061d59040efe595898b1bcc81 "pdflatex"
+  "report-template.bbl" 1683601392 4237 bd2cd99325f6b7f841357ec09e359b19 "bibtex report-template"
+  "report-template.tex" 1683601392 20700 8f929629c0cd8e356d3cd526ab6b0d1c ""
   (generated)
   "report-template.aux"
   "report-template.log"
